@@ -1,0 +1,33 @@
+extends ../layout
+block content
+	.header
+		.header-titlle
+			.container
+				ul.nav.pb-3.border-bottom.border-dark
+					li.nav-item
+						i.phone.fas.fa-phone-volume.fa-2x.pr-5
+					li.nav-item
+						i.email.fas.fa-envelope-square.fa-2x
+				.d-flex.pt-2.relative
+					a(href='/')
+						h1.pr-5 
+							i SAND-KING					
+					ul.nav
+						li.nav-item.pr-5
+							a.nav-link(href='/muaBan') Mua bán
+						li.nav-item.pr-5
+							a.nav-link(href='#') Dự án		
+						li.nav-item.pr-5
+							a.nav-link(href='#') Tin tức
+	.create-body
+		.container.pt-5.pb-5
+			h2 ĐĂNG TIN BÁN ĐẤT
+			form.pr-5.mr-5.mb-0(action='/muaBan/create', method='POST', enctype='multipart/form-data')
+				.form-group
+					label(for='address') Địa chỉ
+					textarea#address.form-control(name="address")
+				.form-group
+					label(for='information') Thông tin
+					textarea#information.form-control(rows='3', name="information")
+				input.d-block.mb-5.mt-5(type="file", name="avatar")
+				button.btn.btn-primary(type='submit') Submit

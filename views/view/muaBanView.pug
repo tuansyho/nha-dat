@@ -1,0 +1,28 @@
+extends ../layout
+block content
+	.header
+		.header-titlle
+			.container
+				ul.nav.pb-3.border-bottom.border-dark
+					li.nav-item
+						i.phone.fas.fa-phone-volume.fa-2x.pr-5
+					li.nav-item
+						i.email.fas.fa-envelope-square.fa-2x
+				.d-flex.pt-2.relative
+					a(href='/')
+						h1.pr-5 
+							i SAND-KING					
+					ul.nav
+						li.nav-item.pr-5
+							a.nav-link(href='/muaBan') Mua bán
+						li.nav-item.pr-5
+							a.nav-link(href='#') Dự án		
+						li.nav-item.pr-5
+							a.nav-link(href='#') Tin tức
+	.background-view
+		.container.d-flex.justify-content-center.pt-5.pb-3
+			img(src='/' + muaBans.avatar, style='width: 600px; border-radius: 10px;')
+		.container.pb-5
+			ul.m-0(style='font-size: 25px;')
+				li.address= muaBans.address
+				li.information= muaBans.information
