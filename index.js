@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 
 
 var muaBan = require('./router/router.muaBan');
+var district = require('./router/router.district');
 
 var MuaBan = require('./mongodb/muaBan.js');
 
@@ -22,8 +23,8 @@ app.set('view engine', 'pug');
 app.get('/', function(req, res){
 	MuaBan.find().then(function(muaBans){
 		res.render('index',{
-			muaBans: muaBans
-		})
+			muaBans: muaBans.slice(0,8)
+		});
 	})
 })
 app.get('muaBan/search',function(req, res){
@@ -32,13 +33,14 @@ app.get('muaBan/search',function(req, res){
 		var findMuaBan = MuaBans.filter(function(MuaBan){
 			return MuaBan.information.indexOf(q) != -1 || MuaBan.address.indexOf(q) != -1;
 		});
-		res.render('mua-ban/index', {
+		res.render('mua-ban/search', {
 			muaBans: findMuaBan
 	});
 	});
-
 });
+
 app.use('/muaBan', muaBan);
+app.use('/district', district);
 mongoose.connect('mongodb://localhost/muaBan', {useNewUrlParser: true});
 
 app.listen(port, function(){

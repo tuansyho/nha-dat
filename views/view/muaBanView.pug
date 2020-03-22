@@ -1,18 +1,17 @@
 extends ../layout
 block content
 	.header
-		.header-titlle
+		.header-titlle.pb-2
 			.container
 				ul.nav.pb-3.border-bottom.border-dark
 					li.nav-item
 						i.phone.fas.fa-phone-volume.fa-2x.pr-5
 					li.nav-item
 						i.email.fas.fa-envelope-square.fa-2x
-				.d-flex.pt-2.relative
+				.d-flex.pt-2.relative.align-items-center
 					a(href='/')
-						h1.pr-5 
-							i SAND-KING					
-					ul.nav
+						img(src='/image/SAND KING.png', style='width: 200px; border-radius: 30px;')
+					ul.nav.ml-5
 						li.nav-item.pr-5
 							a.nav-link(href='/muaBan') Mua bán
 						li.nav-item.pr-5

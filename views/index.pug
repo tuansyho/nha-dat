@@ -1,24 +1,18 @@
 extends ./layout
 block content
 	.header-index.mb-5
-		.header-titlle
+		.header-titlle.pb-2
 			.container
-				ul.nav.pb-3.border-bottom.border-dark
-					li.nav-item
-						i.phone.fas.fa-phone-volume.fa-2x.pr-5
-					li.nav-item
-						i.email.fas.fa-envelope-square.fa-2x
-				.d-flex.pt-2.relative
+				.d-flex.pt-2.relative.align-items-center
 					a(href='/')
-						h1.pr-5 
-							i SAND-KING					
-					ul.nav
+						img(src='/image/SAND KING.png', style='width: 100px; border-radius: 30px;')
+					ul.nav.ml-5.d-flex.align-items-center
 						li.nav-item.pr-5
-							a.nav-link(href='/muaBan') Mua bán
+							a.nav-link(href='#muaBan') Mua bán
 						li.nav-item.pr-5
 							a.nav-link(href='#') Dự án		
-						li.nav-item.pr-5
-							a.nav-link(href='#') Tin tức
+						li.nav-item
+							a.navav-link(href='#') Tin tức
 						a(href="/muaBan/create")
 							button.btn.btn-warning.create(type='button') Đăng BĐS
 		.container.header-bot.d-flex.align-items-center
@@ -32,11 +26,14 @@ block content
 		#carouselExampleControls.carousel.slide.mt-5.mb-5.container(data-ride='carousel')
 			.carousel-inner.rounded-pill
 				.carousel-item.active
-					img.d-block.w-100(src='/image/QUAN1.svg', alt='...')
+					a(href='/district/1')
+						img.d-block.w-100(src='/image/QUAN1.svg', alt='...')
 				.carousel-item
-					img.d-block.w-100(src='/image/QUAN2.svg', alt='...')
+					a(href='/district/2')
+						img.d-block.w-100(src='/image/QUAN2.svg', alt='...')
 				.carousel-item
-					img.d-block.w-100(src='/image/QUAN3.svg', alt='...')
+					a(href='/district/3')
+						img.d-block.w-100(src='/image/QUAN3.svg', alt='...')
 			a.carousel-control-prev(href='#carouselExampleControls', role='button', data-slide='prev')
 				span.carousel-control-prev-icon(aria-hidden='true')
 				span.sr-only Previous
@@ -45,16 +42,20 @@ block content
 				span.sr-only Next
 		.main-titlle.rounded-pill.pt-3.pb-3.mb-5
 			h1.container MUA BÁN ĐẤT :
-		.container.mb-5
+		.container.mb-5#muaBan
 			.row
 				each muaBan in muaBans
 					.col-3.card.mb-4.p-0(style='width: 18rem;')
 						img.card-img-top(style='height: 15rem;', src= muaBan.avatar)
-						.card-body
+						.card-body(style='position: relative;')
 							h5.d-inline.card-title Địa chỉ: 
 							h5.d-inline= muaBan.address 
 							p.card-text= muaBan.information
-						a.view(href='#') Xem chi tiết
+							span.district= muaBan.district
+						a.view(href='/muaBan/' + muaBan.ids) Xem chi tiết
+		.container
+			a(href='/muaBan#muaBan')
+				h3.mb-4(style='text-align: end; color: blue') Xem tất cả
 		.container-fluid.why.pb-5
 			.container
 				.pt-5.pb-5
@@ -74,3 +75,14 @@ block content
 							h4.mb-0 Mua bán đảm bảo với dịch vụ tốt
 						.col-4
 							h4.mb-0 Giao dịch đảm bảo và tiện lợi với sự hỗ trợ của chúng tôi
+		.containner-fluid.ask
+			.container
+				.row.pt-5(style='position: relative;')
+					.col.d-flex.flex-column.align-items-center.text-center.pb-5
+						i.fas.fa-home.fa-5x.pb-5
+						h3.pb-5 Bán nhà nhanh chóng và miễn phí với Sand-King
+						button.ask.rounded.p-2 Đăng tin ngay
+					.col.d-flex.flex-column.align-items-center.text-center
+						i.fas.fa-envelope-open-text.fa-5x.pb-5
+						h3.pb-5 Đặt câu hỏi để được tư vấn miễn phí
+						button.ask.rounded.p-2 Hỏi ngay

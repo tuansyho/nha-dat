@@ -2,27 +2,31 @@ extends ../layout
 block content
 	.header
 		.header-titlle
-			.container
-				ul.nav.pb-3.border-bottom.border-dark
-					li.nav-item
-						i.phone.fas.fa-phone-volume.fa-2x.pr-5
-					li.nav-item
-						i.email.fas.fa-envelope-square.fa-2x
-				.d-flex.pt-2.relative
+			.container.pb-2
+				.d-flex.pt-2.relative.align-items-center
 					a(href='/')
-						h1.pr-5 
-							i SAND-KING					
-					ul.nav
+						img(src='/image/SAND KING.png', style='width: 100px; border-radius: 30px;')
+					ul.nav.ml-5.d-flex.align-items-center
 						li.nav-item.pr-5
-							a.nav-link(href='/muaBan') Mua bán
+							a.nav-link(href='#muaBan') Mua bán
 						li.nav-item.pr-5
 							a.nav-link(href='#') Dự án		
-						li.nav-item.pr-5
-							a.nav-link(href='#') Tin tức
+						li.nav-item
+							a.navav-link(href='#') Tin tức
 	.create-body
 		.container.pt-5.pb-5
 			h2 ĐĂNG TIN BÁN ĐẤT
+			if errors
+				each error in errors
+					.alert.alert-danger= error
 			form.pr-5.mr-5.mb-0(action='/muaBan/create', method='POST', enctype='multipart/form-data')
+				.form-group
+					label(for='district') Quận
+						select.custom-select.mt-2(name="district")
+							option(selected='') Chọn Quận
+							option(value='1') Quận 1
+							option(value='2') Quận 2
+							option(value='3') Quận 3
 				.form-group
 					label(for='address') Địa chỉ
 					textarea#address.form-control(name="address")

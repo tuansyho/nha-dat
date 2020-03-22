@@ -1,26 +1,20 @@
 extends ../layout
 block content
 	.header-index
-		.header-titlle
+		.header-titlle.pb-2
 			.container
-				ul.nav.pb-3.border-bottom.border-dark
-					li.nav-item
-						i.phone.fas.fa-phone-volume.fa-2x.pr-5
-					li.nav-item
-						i.email.fas.fa-envelope-square.fa-2x
-				.d-flex.pt-2.relative
+				.d-flex.pt-2.relative.align-items-center
 					a(href='/')
-						h1.pr-5 
-							i SAND-KING					
-					ul.nav
+						img(src='/image/SAND KING.png', style='width: 100px; border-radius: 30px;')
+					ul.nav.ml-5.d-flex.align-items-center
 						li.nav-item.pr-5
-							a.nav-link(href='/muaBan') Mua bán
+							a.nav-link(href='#muaBan') Mua bán
 						li.nav-item.pr-5
 							a.nav-link(href='#') Dự án		
-						li.nav-item.pr-5
-							a.nav-link(href='#') Tin tức
-					a(href="/muaBan/create")
-						button.btn.btn-warning.create(type='button') Đăng BĐS
+						li.nav-item
+							a.navav-link(href='#') Tin tức
+						a(href="/muaBan/create")
+							button.btn.btn-warning.create(type='button') Đăng BĐS
 		.container.header-bot.d-flex.align-items-center
 			form.d-flex.justify-content-center.m-0(action='/muaBan/search' method='get')
 				input.d-inline.rounded.mr-1(name='q' type='text',placeholder='Nhập từ khóa bạn cần tìm kiếm')
@@ -28,13 +22,20 @@ block content
 					i.fas.fa-search.fa-2x(style='color: #fff;')
 	.main-titlle.rounded-pill.pt-3.pb-3.mb-5.mt-5
 		h2.container ĐĂNG TIN BÁN ĐẤT : 
-	.container.mb-5
+	.container.mb-5#muaBan
 		.row
 			each muaBan in muaBans
 				.col-3.card.mb-4.p-0(style='width: 18rem;')
 					img.card-img-top(style='height: 15rem;', src= '/' + muaBan.avatar)
-					.card-body
+					.card-body(style='position: relative;')
 						h5.d-inline.card-title Địa chỉ: 
 						h5.d-inline= muaBan.address 
 						p.card-text= muaBan.information
+						span.district= muaBan.district
 					a.view(href='/muaBan/' + muaBan.id) Xem chi tiết
+	.container.d-flex.justify-content-center
+		nav(aria-label='Page navigation example')
+			ul.pagination
+				each val in vals
+					li.page-item.border.border-primary
+						a.page-link.page(href='/muaBan?page=' + val)= val
