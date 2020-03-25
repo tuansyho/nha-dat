@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var muaBan = require('./router/router.muaBan');
 var district = require('./router/router.district');
+var email = require('./router/router.createEmail');
 
 var MuaBan = require('./mongodb/muaBan.js');
 
@@ -41,9 +42,10 @@ app.get('muaBan/search',function(req, res){
 
 app.use('/muaBan', muaBan);
 app.use('/district', district);
+app.use('/createEmail', email);
 mongoose.connect('mongodb://localhost/muaBan', {useNewUrlParser: true});
 
 app.listen(port, function(){
 	console.log('Example app listening on port' +' '+ port); 
-})
+});
 

@@ -1,0 +1,32 @@
+extends ../layout
+block content
+	.header
+		.header-titlle
+			.container.pb-2
+				.d-flex.pt-2.relative.align-items-center
+					a(href='/')
+						img(src='/image/SAND KING.png', style='width: 100px; border-radius: 30px;')
+					ul.nav.ml-5.d-flex.align-items-center
+						li.nav-item.pr-5
+							a.nav-link(href='#muaBan') Mua bán
+						li.nav-item.pr-5
+							a.nav-link(href='#') Dự án		
+						li.nav-item
+							a.navav-link(href='#') Tin tức
+	.create-body
+		.container
+			.pt-5
+			if errors
+				each error in errors
+					.alert.alert-danger= error
+			form.mb-0.pb-5(action='/createEmail', method='POST')
+				.form-group
+					label(for='exampleInputEmail1') Nhập Email
+					input#exampleInputEmail1.form-control(type='email', aria-describedby='emailHelp', name='email')
+				.form-group
+					label(for='exampleInputPassword1') Nhập Password
+					input#exampleInputPassword1.form-control(type='password', name='password')
+				.form-group
+					label(for='exampleInputPassword1') Nhập lại Password
+					input#exampleInputPassword1.form-control(type='password', name='passwordAgain')
+				button.btn.btn-primary(type='submit') Submit

@@ -71,7 +71,5 @@ router.post('/create', upload.single('avatar'), function(req,res){
 	req.body.avatar = req.file.path.split('\\').slice(1).join('/');
 	MuaBan.insertMany(req.body, function(){
 	});
-	res.redirect('/muaBan');
 });
-
 module.exports = router;
