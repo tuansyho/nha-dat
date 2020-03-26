@@ -22,11 +22,11 @@ block content
 			form.mb-0.pb-5(action='/createEmail', method='POST')
 				.form-group
 					label(for='exampleInputEmail1') Nhập Email
-					input#exampleInputEmail1.form-control(type='email', aria-describedby='emailHelp', name='email')
+					input#exampleInputEmail1.form-control(type='email', aria-describedby='emailHelp', name='email', value= values ? values.email : '')
 				.form-group
 					label(for='exampleInputPassword1') Nhập Password
-					input#exampleInputPassword1.form-control(type='password', name='password')
+					input#exampleInputPassword1.form-control(type='password', name='password', value= values ? values.password : '')
 				.form-group
 					label(for='exampleInputPassword1') Nhập lại Password
-					input#exampleInputPassword1.form-control(type='password', name='passwordAgain')
+					input#exampleInputPassword1.form-control(type='password', name='passwordAgain', value= values ? values.passwordAgain : '')
 				button.btn.btn-primary(type='submit') Submit

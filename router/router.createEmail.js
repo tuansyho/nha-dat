@@ -23,7 +23,8 @@ router.post('/',function(req, res){
 	if(errors.length)
 	{
 		res.render('email/createEmail',{
-			errors: errors
+			errors: errors,
+			values: req.body
 		});
 		return;
 	}
