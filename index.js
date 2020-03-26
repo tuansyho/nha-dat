@@ -1,18 +1,18 @@
-var express = require('express');
-var app = express();
-var mongoose = require('mongoose');
-var bodyParser = require('body-parser');
+const express = require('express');
+const app = express();
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
 
 
-var muaBan = require('./router/router.muaBan');
-var district = require('./router/router.district');
-var email = require('./router/router.createEmail');
-var login = require('./router/router.login');
+const muaBan = require('./router/router.muaBan');
+const district = require('./router/router.district');
+const email = require('./router/router.createEmail');
+const login = require('./router/router.login');
 
-var MuaBan = require('./mongodb/muaBan.js');
+const MuaBan = require('./mongodb/muaBan.js');
 
-var port = 3001;
+const port = 3001;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
