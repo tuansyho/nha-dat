@@ -1,35 +1,10 @@
-var express = require('express');
-var Email = require('../mongodb/email.js');
+const express = require('express');
 
-var router = express.Router();
+const controller = require('../controller/controller.createEmail');
 
-router.get('/',function(req, res){
-	res.render('email/createEmail');
-});
-router.post('/',function(req, res){
-	var errors = [];
-	if(!req.body.email)
-	{
-		errors.push('Bạn cần nhập email');
-	}
-	if(!req.body.password)
-	{
-		errors.push('Bạn cần nhập password');
-	}
-	if(req.body.password !== req.body.passwordAgain)
-	{
-		errors.push('Mật khẩu nhập lại của bạn không khớp');
-	}
-	if(errors.length)
-	{
-		res.render('email/createEmail',{
-			errors: errors,
-			values: req.body
-		});
-		return;
-	}
-	Email.insertMany(req.body, function(){
-	});
-});
+const router = express.Router();
+
+router.get('/', controller.index);
+router.post('/', controller.createEmailPost);
 
 module.exports = router;

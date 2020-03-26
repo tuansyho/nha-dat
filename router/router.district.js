@@ -1,37 +1,11 @@
-var express = require('express');
+const express = require('express');
 
-var router = express.Router();
+const controller = require('../controller/controller.district');
 
-var MuaBan = require('../mongodb/muaBan.js');
+const router = express.Router();
 
-router.get('/1',function(req, res){
-	MuaBan.find().then(function(MuaBans){
-		var muaBans = MuaBans.filter(function(MuaBan){
-			return MuaBan.district === '1'
-		});
-		res.render('district',{
-			muaBans: muaBans 
-		});
-	});
-});
-router.get('/2',function(req, res){
-	MuaBan.find().then(function(MuaBans){
-		var muaBans = MuaBans.filter(function(MuaBan){
-			return MuaBan.district === '2'
-		});
-		res.render('district',{
-			muaBans: muaBans 
-		});
-	});
-});
-router.get('/3',function(req, res){
-	MuaBan.find().then(function(MuaBans){
-		var muaBans = MuaBans.filter(function(MuaBan){
-			return MuaBan.district === '3'
-		});
-		res.render('district',{
-			muaBans: muaBans 
-		});
-	});
-});
+router.get('/1', controller.district1);
+router.get('/2', controller.district2);
+router.get('/3', controller.district3);
+
 module.exports = router;
