@@ -2,19 +2,22 @@ extends ./layout
 block content
 	.header-index.mb-5
 		.header-titlle.pb-2
-			.container
-				.d-flex.pt-2.relative.align-items-center
-					a(href='/')
+				.d-md-flex.pt-2.relative.align-items-center
+					a.mr-5(href='/')
 						img(src='/image/SAND KING.png', style='width: 100px; border-radius: 30px;')
-					ul.nav.ml-5.d-flex.align-items-center
+					ul.nav.d-flex.align-items-center.justify-content-center
 						li.nav-item.pr-2
 							a.nav-link(href='/muaBan#muaBan') Mua bán
 						li.nav-item.pr-2
 							a.nav-link(href='#') Dự án		
 						li.nav-item
-							a.navav-link(href='#') Tin tức
+							a.nav-link(href='#') Tin tức
 						a(href="/muaBan/create")
-							button.btn.btn-warning.create(type='button') Đăng BĐS
+					.header-right.create
+						a.pr-1(href="/createEmail") Đăng ký
+						span /
+						a.pr-1(href="/createEmail") Đăng nhập
+						button.btn.btn-warning(type='button') Đăng BĐS
 		.container.header-bot.d-flex.align-items-center
 			form.d-flex.justify-content-center.m-0(action='/muaBan/search' method='get')
 				input.d-inline.rounded.mr-1(name='q' type='text',placeholder='Nhập từ khóa bạn cần tìm kiếm')
@@ -22,7 +25,7 @@ block content
 					i.fas.fa-search.fa-2x(style='color: #fff;')
 	.container-fluid.main.pl-0.pr-0
 		.main-titlle.pt-3.pb-3.rounded-pill
-			h1.container CÁC QUẬN CỦA THÀNH PHỐ :
+			h1.container CÁC QUẬN :
 		#carouselExampleControls.carousel.slide.mt-5.mb-5.container(data-ride='carousel')
 			.carousel-inner.rounded-pill
 				.carousel-item.active
@@ -45,8 +48,8 @@ block content
 		.container.mb-5#muaBan
 			.row
 				each muaBan in muaBans
-					.col-3.card.mb-4.p-0(style='width: 18rem;')
-						img.card-img-top(style='height: 15rem;', src= muaBan.avatar)
+					.col-12.col-md-6.col-lg-3.card.mb-4.p-0.card-muaBan(style='width: 18rem;')
+						img.card-img-top.img-muaBan( src= muaBan.avatar)
 						.card-body(style='position: relative;')
 							h5.d-inline.card-title Địa chỉ: 
 							h5.d-inline= muaBan.address 
@@ -60,29 +63,26 @@ block content
 			.container
 				.pt-5.pb-5
 					h3 Vì sao SAND-KING thành lập?
-				.container-fluid.mt-5.mb-5
+				.container-fluid.mt-5
 					.row.pb-5
-						.col-4
-							i.fas.fa-search.fa-5x
-						.col-4
-							i.fab.fa-servicestack.fa-5x
-						.col-4
-							i.fas.fa-coins.fa-5x
-					.row.mt-5.pb-5
-						.col-4
-							h4.mb-0 Nhu cầu mua bán bất động sản tăng cao
-						.col-4
-							h4.mb-0 Mua bán đảm bảo với dịch vụ tốt
-						.col-4
-							h4.mb-0 Giao dịch đảm bảo và tiện lợi với sự hỗ trợ của chúng tôi
+						.col-12.col-md-4
+							i.fas.fa-search.fa-5x.pb-5
+							h4.mb-0.mb-5 Nhu cầu mua bán bất động sản tăng cao
+						.col-12.col-md-4
+							i.fab.fa-servicestack.fa-5x.pb-5
+							h4.mb-0.mb-5 Mua bán đảm bảo với dịch vụ tốt
+						.col-12.col-md-4
+							i.fas.fa-coins.fa-5x.pb-5
+							h4.mb-0.mb-5 Giao dịch đảm bảo và tiện lợi với sự hỗ trợ của chúng tôi
+							
 		.containner-fluid.ask
 			.container
 				.row.pt-5(style='position: relative;')
-					.col.d-flex.flex-column.align-items-center.text-center.pb-5
+					.col-12.col-md-6.d-flex.flex-column.align-items-center.text-center.pb-5
 						i.fas.fa-home.fa-5x.pb-5
 						h3.pb-5 Bán nhà nhanh chóng và miễn phí với Sand-King
 						button.ask.rounded.p-2 Đăng tin ngay
-					.col.d-flex.flex-column.align-items-center.text-center
+					.col-12.col-md-6.d-flex.flex-column.align-items-center.text-center.
 						i.fas.fa-envelope-open-text.fa-5x.pb-5
 						h3.pb-5 Đặt câu hỏi để được tư vấn miễn phí
-						button.ask.rounded.p-2 Hỏi ngay
+						button.ask.rounded.pb-2 Hỏi ngay

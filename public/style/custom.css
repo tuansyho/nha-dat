@@ -17,16 +17,16 @@ body{
 i.phone::after{
 	content: '09701000';
 }
-i.email::after{
-	content:'tuansyho96@gmail.com';
+.header-titlle a{
+	font-weight: 500;
 }
 a{
 	color: #d7b424;	
 }
-.header-titlle button.create{
+.header-titlle .create{
 	position: absolute;
-	right: 0px;
-	bottom: 10px;
+	right: 5em;
+	top: 20px;
 }
 .relative{
 	position: relative;
@@ -39,6 +39,30 @@ a{
 }
 .main-titlle{
 	background-color: rgba(0, 0, 0, 0.5);
+}
+.img-muaBan{
+	height: 15rem;
+}
+.padding-l{
+	padding-left: 5em; 
+}
+@media only screen and (max-width: 600px) {
+  .img-muaBan {
+    width: 25rem;
+    height: 21rem;
+  }
+  .card-muaBan {
+    width: 25rem;
+    height: 30rem;
+  }
+  .header-titlle .create{
+  	position: absolute;
+	right: 0em;
+	top: 20px;
+  }
+  .padding-l{
+	padding-left: 0em; 
+}
 }
 .why{
 	background-color: rgba(0, 0, 0, 0.7);

@@ -4,16 +4,21 @@ block content
 		.header-titlle
 			.container.pb-2
 				.d-flex.pt-2.relative.align-items-center
-					a(href='/')
+					a.mr-5.pl-5(href='/')
 						img(src='/image/SAND KING.png', style='width: 100px; border-radius: 30px;')
-					ul.nav.ml-5.d-flex.align-items-center
-						li.nav-item.pr-5
-							a.nav-link(href='#muaBan') Mua bán
-						li.nav-item.pr-5
+					ul.nav.d-flex.align-items-center.justify-content-center
+						li.nav-item.pr-2
+							a.nav-link(href='/muaBan#muaBan') Mua bán
+						li.nav-item.pr-2
 							a.nav-link(href='#') Dự án		
 						li.nav-item
-							a.navav-link(href='#') Tin tức
-				h2= user
+							a.nav-link(href='#') Tin tức
+						a(href="/muaBan/create")
+					.header-right.create
+						a.pr-1(href="/createEmail") Đăng ký
+						span /
+						a.pr-1(href="/createEmail") Đăng nhập
+						button.btn.btn-warning(type='button') Đăng BĐS
 	.create-body
 		.container.pt-5.pb-5
 			h2 ĐĂNG TIN BÁN ĐẤT

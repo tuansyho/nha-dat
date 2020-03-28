@@ -10,17 +10,13 @@ html
 
 	body
 		.fixed
-			ul.nav.pb-3
-				li.nav-item
 					i.phone.fas.fa-phone-volume.fa-2x.pr-5
-				li.nav-item
-					i.email.fas.fa-envelope-square.fa-2x
-		.afterFixed(style='height: 51px;')
+		.afterFixed(style='height: 32px;')
 		block content
 		.footer
 			.container.pb-5.pt-5
 				.row
-					.col
+					.col-12.col-md-6
 						h1.top Dịch vụ bất động sản
 						h1.bot SAND-KING
 						p 100 Man Thiện, Phường Tăng Nhơn Phú, Quận 9, TP. Hồ Chí Minh
@@ -28,7 +24,7 @@ html
 						p Hãy gọi cho chúng tôi để được tư vấn
 						.phone
 							i.phone.fas.fa-phone-volume.fa-2x
-					.col
+					.col-12.col-md-6
 						h1.pb-5 Liên kết với chúng tôi
 						a(href='#')
 							img.pr-5(src='/image/facebook.svg')

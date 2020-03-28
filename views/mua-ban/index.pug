@@ -2,19 +2,22 @@ extends ../layout
 block content
 	.header-index
 		.header-titlle.pb-2
-			.container
-				.d-flex.pt-2.relative.align-items-center
-					a(href='/')
-						img(src='/image/SAND KING.png', style='width: 100px; border-radius: 30px;')
-					ul.nav.ml-5.d-flex.align-items-center
-						li.nav-item.pr-5
-							a.nav-link(href='#muaBan') Mua bán
-						li.nav-item.pr-5
-							a.nav-link(href='#') Dự án		
-						li.nav-item
-							a.nav-link(href='#') Tin tức
-						a(href="/muaBan/create")
-							button.btn.btn-warning.create(type='button') Đăng BĐS
+			.d-md-flex.pt-2.relative.align-items-center
+				a.mr-5.padding-l(href='/')
+					img(src='/image/SAND KING.png', style='width: 100px; border-radius: 30px;')
+				ul.nav.d-flex.align-items-center.justify-content-center
+					li.nav-item.pr-2
+						a.nav-link(href='/muaBan#muaBan') Mua bán
+					li.nav-item.pr-2
+						a.nav-link(href='#') Dự án		
+					li.nav-item
+						a.nav-link(href='#') Tin tức
+					a(href="/muaBan/create")
+				.header-right.create
+					a.pr-1(href="/createEmail") Đăng ký
+					span /
+					a.pr-1(href="/createEmail") Đăng nhập
+					button.btn.btn-warning(type='button') Đăng BĐS
 		.container.header-bot.d-flex.align-items-center
 			form.d-flex.justify-content-center.m-0(action='/muaBan/search' method='get')
 				input.d-inline.rounded.mr-1(name='q' type='text',placeholder='Nhập từ khóa bạn cần tìm kiếm')
@@ -25,14 +28,14 @@ block content
 	.container.mb-5
 		.row
 			each muaBan in muaBans
-				.col-3.card.mb-4.p-0(style='width: 18rem;')
-					img.card-img-top(style='height: 15rem;', src= '/' + muaBan.avatar)
+				.col-12.col-md-6.col-lg-3.card.mb-4.p-0.card-muaBan(style='width: 18rem;')
+					img.card-img-top.img-muaBan( src= muaBan.avatar)
 					.card-body(style='position: relative;')
 						h5.d-inline.card-title Địa chỉ: 
 						h5.d-inline= muaBan.address 
 						p.card-text= muaBan.information
 						span.district= muaBan.district
-					a.view(href='/muaBan/' + muaBan.id) Xem chi tiết
+					a.view(href='/muaBan/' + muaBan.ids) Xem chi tiết
 	.container.d-flex.justify-content-center
 		nav(aria-label='Page navigation example')
 			ul.pagination
