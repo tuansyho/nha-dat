@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-
+const cookieParser = require('cookie-parser');
 
 
 const muaBan = require('./router/router.muaBan');
@@ -16,7 +16,7 @@ const port = 80;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
+app.use(cookieParser());
 app.use(express.static('public'));
 
 app.set('view engine', 'pug');

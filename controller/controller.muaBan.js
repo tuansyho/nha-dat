@@ -2,6 +2,7 @@ const express = require('express');
 
 const MuaBan = require('../mongodb/muaBan.js');
 
+const email = require('../mongodb/email');
 module.exports.index = function(req, res){
 	MuaBan.find().then(function(muaBans){
 		var page = parseInt(req.query.page) || 1;
@@ -37,6 +38,9 @@ module.exports.id = function(req, res){
 		res.render('view/muaBanView',{
 			muaBans: MuaBans});
 	});
+};
+module.exports.create = function(req, res){
+	res.render('mua-ban/create');
 };
 module.exports.createPost = function(req,res){ 
 	req.body.avatar = req.file.path.split('\\').slice(1).join('/');

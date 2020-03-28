@@ -21,6 +21,8 @@ module.exports.login = function(req, res){
 			})
 			return;
 		}
+		res.cookie('emailId', checkEmail.id);
 		res.redirect('/muaBan/create');
+
 	});
 };
