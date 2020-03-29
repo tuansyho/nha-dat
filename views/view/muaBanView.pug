@@ -2,22 +2,23 @@ extends ../layout
 block content
 	.header
 		.header-titlle.pb-2
-			.container
-				ul.nav.pb-3.border-bottom.border-dark
-					li.nav-item
-						i.phone.fas.fa-phone-volume.fa-2x.pr-5
-					li.nav-item
-						i.email.fas.fa-envelope-square.fa-2x
-				.d-flex.pt-2.relative.align-items-center
-					a(href='/')
-						img(src='/image/SAND KING.png', style='width: 200px; border-radius: 30px;')
-					ul.nav.ml-5
-						li.nav-item.pr-5
-							a.nav-link(href='/muaBan') Mua bán
-						li.nav-item.pr-5
+				.d-md-flex.pt-2.relative.align-items-center
+					a.mr-5.padding-l(href='/')
+						img(src='/image/SAND KING.png', style='width: 100px; border-radius: 30px;')
+					ul.nav.d-flex.align-items-center.justify-content-center
+						li.nav-item.pr-2
+							a.nav-link(href='/muaBan#muaBan') Mua bán
+						li.nav-item.pr-2
 							a.nav-link(href='#') Dự án		
-						li.nav-item.pr-5
+						li.nav-item
 							a.nav-link(href='#') Tin tức
+						a(href="/muaBan/create")
+					.header-right.create
+						a.pr-1(href="/createEmail") Đăng ký
+						span /
+						a.pr-1(href="/createEmail") Đăng nhập
+						a(href="/muaBan/create")
+							button.btn.btn-warning(type='button') Đăng BĐS
 	.background-view
 		.container.d-flex.justify-content-center.pt-5.pb-3
 			img(src='/' + muaBans.avatar, style='width: 600px; border-radius: 10px;')

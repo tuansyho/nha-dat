@@ -16,8 +16,9 @@ block content
 				.header-right.create
 					a.pr-1(href="/createEmail") Đăng ký
 					span /
-					a.pr-1(href="/createEmail") Đăng nhập
-					button.btn.btn-warning(type='button') Đăng BĐS
+					a.pr-1(href="/login") Đăng nhập
+					a(href="/muaBan/create")
+						button.btn.btn-warning(type='button') Đăng BĐS
 		.container.header-bot.d-flex.align-items-center
 			form.d-flex.justify-content-center.m-0(action='/muaBan/search' method='get')
 				input.d-inline.rounded.mr-1(name='q' type='text',placeholder='Nhập từ khóa bạn cần tìm kiếm')

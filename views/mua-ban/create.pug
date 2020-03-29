@@ -2,8 +2,7 @@ extends ../layout
 block content
 	.header
 		.header-titlle
-			.container.pb-2
-				.d-flex.pt-2.relative.align-items-center
+				.d-md-flex.pt-1.pb-1.relative.align-items-center
 					a.mr-5.pl-5(href='/')
 						img(src='/image/SAND KING.png', style='width: 100px; border-radius: 30px;')
 					ul.nav.d-flex.align-items-center.justify-content-center
@@ -13,12 +12,6 @@ block content
 							a.nav-link(href='#') Dự án		
 						li.nav-item
 							a.nav-link(href='#') Tin tức
-						a(href="/muaBan/create")
-					.header-right.create
-						a.pr-1(href="/createEmail") Đăng ký
-						span /
-						a.pr-1(href="/createEmail") Đăng nhập
-						button.btn.btn-warning(type='button') Đăng BĐS
 	.create-body
 		.container.pt-5.pb-5
 			h2 ĐĂNG TIN BÁN ĐẤT

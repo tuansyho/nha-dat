@@ -3,7 +3,7 @@ block content
 	.header-index.mb-5
 		.header-titlle.pb-2
 				.d-md-flex.pt-2.relative.align-items-center
-					a.mr-5(href='/')
+					a.mr-5.padding-l(href='/')
 						img(src='/image/SAND KING.png', style='width: 100px; border-radius: 30px;')
 					ul.nav.d-flex.align-items-center.justify-content-center
 						li.nav-item.pr-2
@@ -17,7 +17,8 @@ block content
 						a.pr-1(href="/createEmail") Đăng ký
 						span /
 						a.pr-1(href="/createEmail") Đăng nhập
-						button.btn.btn-warning(type='button') Đăng BĐS
+						a(href="/muaBan/create")
+							button.btn.btn-warning(type='button') Đăng BĐS
 		.container.header-bot.d-flex.align-items-center
 			form.d-flex.justify-content-center.m-0(action='/muaBan/search' method='get')
 				input.d-inline.rounded.mr-1(name='q' type='text',placeholder='Nhập từ khóa bạn cần tìm kiếm')
@@ -82,7 +83,7 @@ block content
 						i.fas.fa-home.fa-5x.pb-5
 						h3.pb-5 Bán nhà nhanh chóng và miễn phí với Sand-King
 						button.ask.rounded.p-2 Đăng tin ngay
-					.col-12.col-md-6.d-flex.flex-column.align-items-center.text-center.
+					.col-12.col-md-6.d-flex.flex-column.align-items-center.text-center
 						i.fas.fa-envelope-open-text.fa-5x.pb-5
 						h3.pb-5 Đặt câu hỏi để được tư vấn miễn phí
 						button.ask.rounded.pb-2 Hỏi ngay

@@ -2,17 +2,16 @@ extends ../layout
 block content
 	.header
 		.header-titlle
-			.container.pb-2
-				.d-flex.pt-2.relative.align-items-center
-					a(href='/')
+				.d-md-flex.pt-1.pb-1.relative.align-items-center
+					a.mr-5.padding-l(href='/')
 						img(src='/image/SAND KING.png', style='width: 100px; border-radius: 30px;')
-					ul.nav.ml-5.d-flex.align-items-center
-						li.nav-item.pr-5
-							a.nav-link(href='#muaBan') Mua bán
-						li.nav-item.pr-5
+					ul.nav.d-flex.align-items-center.justify-content-center
+						li.nav-item.pr-2
+							a.nav-link(href='/muaBan#muaBan') Mua bán
+						li.nav-item.pr-2
 							a.nav-link(href='#') Dự án		
 						li.nav-item
-							a.navav-link(href='#') Tin tức
+							a.nav-link(href='#') Tin tức
 	.create-body
 		.container
 			.pt-5
