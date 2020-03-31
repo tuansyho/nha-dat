@@ -2,7 +2,7 @@ const express = require('express');
 
 const MuaBan = require('../mongodb/muaBan.js');
 
-const email = require('../mongodb/email');
+const Email = require('../mongodb/email.js');
 module.exports.index = function(req, res){
 	MuaBan.find().then(function(muaBans){
 		var page = parseInt(req.query.page) || 1;
@@ -30,16 +30,8 @@ module.exports.search = function(req, res){
 	});
 	});
 };
-module.exports.id = function(req, res){
-	MuaBan.find().then(function(MuaBans){
-		var MuaBans = MuaBans.find(function(Muaban){
-			return req.params.id === Muaban.id;
-		});
-		res.render('view/muaBanView',{
-			muaBans: MuaBans});
-	});
-};
 module.exports.create = function(req, res){
+	
 	res.render('mua-ban/create');
 };
 module.exports.createPost = function(req,res){ 

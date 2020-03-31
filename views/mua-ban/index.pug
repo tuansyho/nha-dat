@@ -36,10 +36,11 @@ block content
 						h5.d-inline= muaBan.address 
 						p.card-text= muaBan.information
 						span.district= muaBan.district
-					a.view(href='/muaBan/' + muaBan.ids) Xem chi tiết
+					a.view(href='/muaBan/' + muaBan.id) Xem chi tiết
 	.container.d-flex.justify-content-center
 		nav(aria-label='Page navigation example')
 			ul.pagination
 				each val in vals
 					li.page-item.border.border-primary
 						a.page-link.page(href='/muaBan?page=' + val)= val
+		
