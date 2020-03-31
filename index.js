@@ -22,25 +22,13 @@ app.use(express.static('public'));
 app.set('view engine', 'pug');
 
 
-app.get('/', function(req, res){
-	MuaBan.find().then(function(muaBans){
+app.get('/', (req, res)=>{
+	MuaBan.find().then((muaBans) => {
 		res.render('index',{
 			muaBans: muaBans.slice(0,8)
 		});
 	})
 })
-app.get('muaBan/search',function(req, res){
-	var q = req.query.q;
-	MuaBan.find().then(function(MuaBans){
-		var findMuaBan = MuaBans.filter(function(MuaBan){
-			return MuaBan.information.indexOf(q) != -1 || MuaBan.address.indexOf(q) != -1;
-		});
-		res.render('mua-ban/search', {
-			muaBans: findMuaBan
-	});
-	});
-});
-
 app.use('/muaBan', muaBan);
 app.use('/district', district);
 app.use('/createEmail', email);

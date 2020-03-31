@@ -12,14 +12,6 @@ const middleware = require('../middlewares/middleware.login');
 router.get('/', controller.index);
 router.get('/create', middleware.login, controller.create);
 router.get('/search', controller.search);
-router.get('/:user', async (req, res)=>{
-	const MuaBans = await MuaBan.find();
-	const check = MuaBans.find((muaBan)=>{
-		return muaBan.id === req.params.user
-	});
-	res.render('view/muaBanView', {
-		muaBans: check
-	});
-});
+router.get('/:user', controller.id);
 router.post('/create', upload.single('avatar'), validate.createPost, controller.createPost);
 module.exports = router;
