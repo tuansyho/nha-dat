@@ -1,10 +1,10 @@
 const Email = require('../mongodb/email');
 
-module.exports.login = function(req, res){
+module.exports.login = async (req, res) => {
 	const email = req.body.email;
 	const password = req.body.password;
-	Email.find().then(function(emails){
-		let checkEmail = emails.find((emaill) => { return emaill.email === email}); 
+	const emails = await Email.find();
+	const checkEmail = emails.find((emaill) => { return emaill.email === email}); 
 		if(!checkEmail){
 			const error = 'Email không tồn tại';
 			res.render('email/login', {
@@ -23,6 +23,4 @@ module.exports.login = function(req, res){
 		}
 		res.cookie('emailId', checkEmail.id);
 		res.redirect('/muaBan/create');
-
-	});
 };

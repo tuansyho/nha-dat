@@ -1,4 +1,4 @@
-module.exports.email = function(req, res, next){
+module.exports.email = (req, res, next) => {
 	var errors = [];
 	if(!req.body.email)
 	{

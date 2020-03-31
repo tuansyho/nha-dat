@@ -1,4 +1,4 @@
-module.exports.createPost = function(req, res, next){
+module.exports.createPost = (req, res, next) => {
 	var errors = [];
 	if(req.body.district === 'Chọn Quận'){
 		errors.push('Bạn chưa chọn Quận');

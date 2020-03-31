@@ -2,10 +2,10 @@ const express = require('express');
 
 const Email = require('../mongodb/email.js');
 
-module.exports.index = function(req, res){
+module.exports.index = (req, res) => {
 	res.render('email/createEmail');
 };
-module.exports.createEmailPost = function(req, res){
-	Email.insertMany(req.body, function(){
+module.exports.createEmailPost = (req, res) => {
+	Email.insertMany(req.body, () => {
 	});
 };
