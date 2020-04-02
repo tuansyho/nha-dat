@@ -19,11 +19,77 @@ block content
 						a.pr-1(href="/createEmail") Đăng nhập
 						a(href="/muaBan/create")
 							button.btn.btn-warning(type='button') Đăng BĐS
-		.container.header-bot.d-flex.align-items-center
-			form.d-flex.justify-content-center.m-0(action='/muaBan/search' method='get')
-				input.d-inline.rounded.mr-1(name='q' type='text',placeholder='Nhập từ khóa bạn cần tìm kiếm')
-				button.rounded
-					i.fas.fa-search.fa-2x(style='color: #fff;')
+		.container#find
+			#form
+				input.btnn.active(type='button', value='Mua bán')
+				input.btnn(type='button', value='Cho thuê')
+			.find-bottom
+				#selector
+					.choose
+						.formm
+							select.select.show(style='display: none;')
+								option(value='1') Lo&#x1EA1;i nh&agrave; &dstrok;&#x1EA5;t
+								option(value='1') C&abreve;n h&#x1ED9; chung c&#x1B0;
+								option(value='2') Nh&agrave; ri&ecirc;ng
+								option(value='3') &Dstrok;&#x1EA5;t n&#x1EC1;n
+								option(value='4') Trang tr&#x1EA1;i, khu ngh&itilde; d&#x1B0;&#x1EE1;ng
+								option(value='5') Kho, nh&agrave; x&#x1B0;&#x1EDF;ng
+								option(value='6') C&abreve;n h&#x1ED9; chung c&#x1B0;
+								option(value='7') B&#x1EA5;t &dstrok;&#x1ED9;ng s&#x1EA3;n kh&aacute;c
+							select.select(style='display: none;')
+								option(value='1') Lo&#x1EA1;i nh&agrave; &dstrok;&#x1EA5;t
+								option(value='1') C&abreve;n h&#x1ED9; chung c&#x1B0;
+								option(value='2') Nh&agrave; ri&ecirc;ng
+								option(value='3') Nh&agrave; m&#x1EB7;t ph&#x1ED1;
+								option(value='4') Nh&agrave; tr&#x1ECD;, ph&ograve;ng tr&#x1ECD;
+								option(value='5') V&abreve;n ph&ograve;ng
+								option(value='6') C&#x1EED;a h&agrave;ng, ki &#x1ED1;t
+								option(value='7') Kho, nh&agrave; x&#x1B0;&#x1EDF;ng, &dstrok;&#x1EA5;t
+								option(value='8') B&#x1EA5;t &dstrok;&#x1ED9;ng s&#x1EA3;n kh&aacute;c
+						input.find-input(type='text', name='', placeholder='Nhập từ khóa cần tìm kiếm', onclick='none()')
+						button.right(type='button')
+			#findAdvanced.none
+				div(style='width: 83%;display: inline-block;')
+					.row(style='margin-left: 15px')
+						.col(style='height: 50px;')
+							select.boxFind
+								option(value='1') Khu v&#x1EF1;c
+								option(value='1')
+								option(value='1')
+						.col(style='height: 50px;')
+							select.boxFind
+								option(value='1') &Dstrok;&#x1B0;&#x1EDD;ng ph&#x1ED1;
+								option(value='1')
+								option(value='1')
+						.col(style='height: 50px;')
+							select.boxFind
+								option(value='1') Di&#x1EC7;n t&iacute;ch
+								option(value='1')
+								option(value='1')
+						.col(style='height: 50px;')
+							select.boxFind
+								option(value='1') M&#x1EE9;c gi&aacute;
+								option(value='1')
+								option(value='1')
+			script.
+				const form = document.getElementById("form");
+				const btnn = form.getElementsByClassName("btnn");
+				const selector = document.getElementById("selector");
+				const select = selector.getElementsByClassName("select");
+				for(let i = 0; i < btnn.length; i++){
+				btnn[i].addEventListener("click", function(){
+				const active = document.getElementsByClassName("active");
+				active[0].className = active[0].className.replace(" active", "");
+				this.className += " active";
+				const show = document.getElementsByClassName("show");
+				show[0].className = show[0].className.replace(" show", "")
+				select[i].className += " show";
+				});
+				}
+				function none(){
+				const none = document.getElementById("findAdvanced");
+				none.classList.remove("none");
+				}
 	.container-fluid.main.pl-0.pr-0
 		.main-titlle.pt-3.pb-3.rounded-pill
 			h1.container CÁC QUẬN :
