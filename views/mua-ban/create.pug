@@ -13,24 +13,105 @@ block content
 						li.nav-item
 							a.nav-link(href='#') Tin tức
 	.create-body
-		.container.pt-5.pb-5
-			h2 ĐĂNG TIN BÁN ĐẤT
-			if errors
-				each error in errors
-					.alert.alert-danger= error
-			form.pr-5.mr-5.mb-0(action='/muaBan/create', method='POST', enctype='multipart/form-data')
-				.form-group
-					label(for='district') Quận
-						select.custom-select.mt-2(name="district")
-							option(selected='') Chọn Quận
-							option(value='1') Quận 1
-							option(value='2') Quận 2
-							option(value='3') Quận 3
-				.form-group
-					label(for='address') Địa chỉ
-					textarea#address.form-control(name="address")
-				.form-group
-					label(for='information') Thông tin
-					textarea#information.form-control(rows='3', name="information")
-				input.d-block.mb-5.mt-5(type="file", name="avatar")
-				button.btn.btn-primary(type='submit') Submit
+		.container.pt-5
+			.d-flex.justify-content-center
+				button.styleCreate.active Đăng tin bán
+				button.styleCreate Đăng tin mua
+		.container.pb-5.pt-5.d-flex.justify-content-center(style="background-color: rgba(100,100,100,0.7);border-radius: 3px;")
+			.boxInformation.showCreate(style="display:none;")
+				.formTittle.pl-5
+					.lableTittle Tiêu đề:
+					.d(style="display: inline")
+						input(type="text", id="tittle", style="width: 600px; height: 50px; border-radius: 3px").mr-2
+					span 99 từ
+				.formTittle.pl-5
+					.leftInput
+						.lableTittle Hình thức:
+						.d(style="display: inline")
+							input.createInput(type="text")
+					.rightInput
+						.lableTittle loại:
+						.d(style="display: inline")
+							input.createInput(type="text")
+				.formTittle.pl-5
+					.leftInput
+						.lableTittle Quận:
+						.d(style="display: inline")
+							input.createInput(type="text")
+					.rightInput
+						.lableTittle Xã/ Phường:
+						.d(style="display: inline")
+							input.createInput(type="text")
+				.formTittle.pl-5
+					.leftInput
+						.lableTittle Đường phố:
+						.d(style="display: inline")
+							input.createInput(type="text")
+					.rightInput
+						.lableTittle Diện tích:
+						.d(style="display: inline")
+							input.createInput(type="text")
+				.formTittle.pl-5
+					.leftInput
+						.lableTittle Giá:
+						.d(style="display: inline")
+							input.createInput(type="text")
+					.rightInput
+						.lableTittle Đơn vị:
+						.d(style="display: inline")
+							input.createInput(type="text")	
+			.boxInformation(style="display:none;")
+				.formTittle.pl-5
+					.lableTittle Tiêu đề:
+					.d(style="display: inline")
+						input(type="text", id="tittle", style="width: 600px; height: 50px; border-radius: 3px").mr-2
+					span 99 từ
+				.formTittle.pl-5
+					.leftInput
+						.lableTittle Hình thức:
+						.d(style="display: inline")
+							input.createInput(type="text")
+					.rightInput
+						.lableTittle loại:
+						.d(style="display: inline")
+							input.createInput(type="text")
+				.formTittle.pl-5
+					.leftInput
+						.lableTittle Quận:
+						.d(style="display: inline")
+							input.createInput(type="text")
+					.rightInput
+						.lableTittle Xã/ Phường:
+						.d(style="display: inline")
+							input.createInput(type="text")
+				.formTittle.pl-5
+					.leftInput
+						.lableTittle Đường phố:
+						.d(style="display: inline")
+							input.createInput(type="text")
+					.rightInput
+						.lableTittle Diện tích:
+						.d(style="display: inline")
+							input.createInput(type="text")
+				.formTittle.pl-5
+					.leftInput
+						.lableTittle Giá:
+						.d(style="display: inline")
+							input.createInput(type="text")
+					.rightInput
+						.lableTittle Đơn vị:
+						.d(style="display: inline")
+							input.createInput(type="text")
+		script.
+			const button = document.getElementsByClassName("styleCreate");
+			const boxInformation = document.getElementsByClassName("boxInformation");
+			for(let i = 0; i < button.length; i++){
+			button[i].addEventListener("click", function(){
+			const active = document.getElementsByClassName("active");
+			active[0].className = active[0].className.replace(" active", "");
+			this.className += " active";
+			const showCreate = document.getElementsByClassName("showCreate");
+			showCreate[0].className = showCreate[0].className.replace(" showCreate", "");
+			boxInformation[i].className += " showCreate";
+			});
+			}

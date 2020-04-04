@@ -12,7 +12,7 @@ const login = require('./router/router.login');
 
 const MuaBan = require('./mongodb/muaBan.js');
 
-const port = 80;
+const port = 3000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

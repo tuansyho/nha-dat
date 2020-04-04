@@ -100,7 +100,10 @@ a.view{
 	height: 40px;
 }
 .create-body{
-	background-color: #383b39;
+	background-image: url('/image/sssss.jpg');
+	background-size: cover;
+	background-position: bottom;
+	height: 700px;
 }
 .background-view{
 	background-color: #383b39;
@@ -210,7 +213,6 @@ input:focus{
 }
 #findAdvanced{
 	background-color: rgba(10,10,10,0.8);
-	/*border-top: 10px solid rgba(10,10,10,0.8);*/
 }
 .none{
 	display: none;
@@ -231,3 +233,46 @@ select:focus{
 	padding: 100px 100px 0px 100px;
 	opacity: 0.9; 
 }
+.styleCreate{
+	width: 300px;
+	height: 50px;
+	margin: 0px 5px;
+	border: 0px;
+	border-radius: 5px 5px 0px 0px ;
+	background-color: #222 !important;
+	color: #d7b424 !important;
+	font-weight: 500; 
+	opacity: 0.5
+}
+.active{
+	opacity: 1;
+}
+button:focus{
+	outline: 0;
+}
+.formTittle{
+	width: 800px;
+	margin-bottom: 2em;
+}
+.leftInput{
+	float: left;
+	margin-bottom: 2em;
+}
+.rightInput{
+	float: right;
+	margin-bottom: 2em;
+
+}
+.createInput{
+	width: 200px;
+	height: 50px;
+	border-radius: 3px;	
+}
+.lableTittle{
+	width: 100px !important;
+	display: inline-block;
+}
+.showCreate{
+	display: inline !important;
+}
+
