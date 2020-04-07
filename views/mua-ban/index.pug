@@ -12,7 +12,6 @@ block content
 						a.nav-link(href='#') Dự án		
 					li.nav-item
 						a.nav-link(href='#') Tin tức
-					a(href="/muaBan/create")
 				.header-right.create
 					a.pr-1(href="/createEmail") Đăng ký
 					span /
@@ -27,20 +26,31 @@ block content
 	.main-titlle.rounded-pill.pt-3.pb-3.mb-5.mt-5
 		h2.container#muaBan ĐĂNG TIN BÁN ĐẤT : 
 	.container.mb-5
-		.row
-			each muaBan in muaBans
-				.col-12.col-md-6.col-lg-3.card.mb-4.p-0.card-muaBan(style='width: 18rem;')
-					img.card-img-top.img-muaBan( src= muaBan.avatar)
-					.card-body(style='position: relative;')
-						h5.d-inline.card-title Địa chỉ: 
-						h5.d-inline= muaBan.address 
-						p.card-text= muaBan.information
-						span.district= muaBan.district
-					a.view(href='/muaBan/' + muaBan.id) Xem chi tiết
-	.container.d-flex.justify-content-center
-		nav(aria-label='Page navigation example')
-			ul.pagination
-				each val in vals
-					li.page-item.border.border-primary
-						a.page-link.page(href='/muaBan?page=' + val)= val
-		
+		.rows
+			.col-12.col-md-6
+				a(href="/login")
+					.d-flex(style="height: 250px;", neme="dsadsaaa")
+						.image( style="width: 50%; height: 100%;")
+							img(src="/image/sssss.jpg", style="width: 100%; height: 100%; border-radius: 3px 0px 0px 3px;")
+						.container-fluid.infomationRight( style="width: 50%; height: 100%; padding-top: 5px; position: relative; background-color: #343a40; border-radius: 0px 3px 3px 0px;")
+							div(style="position: absolute; bottom: 0px;")
+								.row.pb-1
+									.col
+										span.tittle-span Quận 1 
+								.row.pb-1
+									.col-12
+										span.tittle-span Phường Long Thành
+								.row.pb-1
+									.col-12
+										span.tittle-span Đường Hai Bà Trưng
+								.row.pb-1
+									.col-12
+										span.tittle-span Nhà riêng
+								.row.pb-1
+									.col
+										span.tittle-span 12 m2
+									.col
+										span.tittle-span 7
+										span.tittle-span tỷ
+								.row
+								

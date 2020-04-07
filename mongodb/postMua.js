@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
   
-var muaBanSchema = new mongoose.Schema({
-	"tittle": String,
+var postMuaSchema = new mongoose.Schema({
+	"tittle1": String,
 	"district": String,
 	"breed": String,
 	"kind": String,
@@ -10,6 +10,6 @@ var muaBanSchema = new mongoose.Schema({
 	"price": String,
 	"unit": String
 });
-var MuaBan = mongoose.model('MuaBan', muaBanSchema, 'MuaBan');
+var postMua = mongoose.model('postMua', postMuaSchema, 'postMua');
 
-module.exports = MuaBan;
+module.exports = postMua;

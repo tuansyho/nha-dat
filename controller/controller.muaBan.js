@@ -1,6 +1,9 @@
 const express = require('express');
 
 const MuaBan = require('../mongodb/muaBan.js');
+const postBan = require('../mongodb/postBan.js');
+const postMua = require('../mongodb/postMua.js');
+
 
 const Email = require('../mongodb/email.js');
 module.exports.index = async (req, res) => {
@@ -42,7 +45,15 @@ module.exports.create = (req, res) => {
 	res.render('mua-ban/create');
 };
 module.exports.createPost = (req,res) => { 
-	req.body.avatar = req.file.path.split('\\').slice(1).join('/');
-	MuaBan.insertMany(req.body,() => {
-	});
+	// req.body.avatar = req.file.path.split('\\').slice(1).join('/');
+	if(!req.body.tittle1){
+		postBan.insertMany(req.body,() => {
+		});
+		res.redirect('/');	
+	}
+	else{
+		postMua.insertMany(req.body,() => {
+		});
+		res.redirect('/');	
+	}
 };

@@ -17,91 +17,134 @@ block content
 			.d-flex.justify-content-center
 				button.styleCreate.active Đăng tin bán
 				button.styleCreate Đăng tin mua
-		.container.pb-5.pt-5.d-flex.justify-content-center(style="background-color: rgba(100,100,100,0.7);border-radius: 3px;")
-			.boxInformation.showCreate(style="display:none;")
-				.formTittle.pl-5
-					.lableTittle Tiêu đề:
+		.container.pb-5.pt-5.d-flex.justify-content-center(style="background-color: rgba(100,100,100,0.7);border-radius: 3px; position: relative;")
+			form.boxInformation.showCreate(action="/muaBan/create", method="POST", style="display:none;")
+				if errors
+					.alert.alert-danger(style="text-align: center;")
+						span Bạn chưa điền: |
+						each error in errors
+							span= error
+				.formTittle
+					.lableTittle Tiêu đề: (
+						span(style="color: red;") *
+						span )
+					.d(style="display: inline; height: 0px;")
+						input.width600.pl-2(name="tittle", type="text", id="tittle", style="width: 600px; height: 50px; border-radius: 3px;", value = value ? value.tittle : "").mr-2
+						span 99 từ
+				.formTittle
+					.leftInput
+						.lableTittle Hình thức: (
+							span(style="color: red") *
+							span )
+						.d(style="display: inline; height: 0px;")
+							input.createInput.pl-2(name="breed", type="text",  value = value ? value.breed : "")
+					.rightInput
+						.lableTittle loại: (
+							span(style="color: red") *
+							span )
+						.d(style="display: inline; height: 0px;")
+							input.createInput.pl-2(name="kind", type="text",  value = value ? value.kind : "")
+				.formTittle
+					.leftInput
+						.lableTittle Quận: (
+							span(style="color: red") *
+							span )
+						.d(style="display: inline; height: 0px;")
+							input.createInput.pl-2(name="district", type="text",  value = value ? value.district : "")
+					.rightInput
+						.lableTittle Xã/ Phường: (
+							span(style="color: red") *
+							span )
+						.d(style="display: inline; height: 0px;")
+							input.createInput.pl-2(name="wards", type="text",  value = value ? value.wards : "")
+				.formTittle
+					.leftInput
+						.lableTittle Đường phố: (
+							span(style="color: red") *
+							span )
+						.d(style="display: inline; height: 0px;")
+							input.createInput.pl-2(name="streetCity", type="text",  value = value ? value.streetCity : "")
+					.rightInput
+						.lableTittle Diện tích: (
+							span(style="color: red") *
+							span )
+						.d(style="display: inline; height: 0px;")
+							input.createInput.pl-2(name="acreage", type="text",  value = value ? value.acreage : "")
+				.formTittle
+					.leftInput
+						.lableTittle Giá: (
+							span(style="color: red") *
+							span )
+						.d(style="display: inline; height: 0px;")
+							input.createInput.pl-2(name="price", type="text",  value = value ? value.price : "")
+					.rightInput
+						.lableTittle Đơn vị: (
+							span(style="color: red") *
+							span )
+						.d(style="display: inline; height: 0px;")
+							input.createInput.pl-2(name="unit", type="text",  value = value ? value.unit : "")
+				button.sumit(style="position: absolute; bottom: 30px; right: 46%;") Submit
+			form.boxInformation(action="/muaBan/create", method="post", style="display:none;")
+				.formTittle
+					.lableTittle Tiêu đề: (
+							span(style="color: red") *
+							span )
 					.d(style="display: inline")
-						input(type="text", id="tittle", style="width: 600px; height: 50px; border-radius: 3px").mr-2
+						input(name="tittle1", type="text", id="tittle", style="width: 600px; height: 50px; border-radius: 3px;",  value = value ? value.tittle1 : "").mr-2
 					span 99 từ
-				.formTittle.pl-5
+				.formTittle
 					.leftInput
-						.lableTittle Hình thức:
+						.lableTittle Hình thức: (
+							span(style="color: red") *
+							span )
 						.d(style="display: inline")
-							input.createInput(type="text")
+							input.createInput(name="breed", type="text",  value = value ? value.breed : "")
 					.rightInput
-						.lableTittle loại:
+						.lableTittle loại: (
+							span(style="color: red") *
+							span )
 						.d(style="display: inline")
-							input.createInput(type="text")
-				.formTittle.pl-5
+							input.createInput(name="kind", type="text",  value = value ? value.kind : "")
+				.formTittle
 					.leftInput
-						.lableTittle Quận:
+						.lableTittle Quận: (
+							span(style="color: red") *
+							span )
 						.d(style="display: inline")
-							input.createInput(type="text")
+							input.createInput(name="district", type="text",  value = value ? value.district : "")
 					.rightInput
-						.lableTittle Xã/ Phường:
+						.lableTittle Xã/ Phường: (
+							span(style="color: red") *
+							span )
 						.d(style="display: inline")
-							input.createInput(type="text")
-				.formTittle.pl-5
+							input.createInput(name="wards", type="text",  value = value ? value.wards : "")
+				.formTittle
 					.leftInput
-						.lableTittle Đường phố:
+						.lableTittle Đường phố: (
+							span(style="color: red") *
+							span )
 						.d(style="display: inline")
-							input.createInput(type="text")
+							input.createInput(name="streetCity", type="text",  value = value ? value.streetCity : "")
 					.rightInput
-						.lableTittle Diện tích:
+						.lableTittle Diện tích: (
+							span(style="color: red") *
+							span )
 						.d(style="display: inline")
-							input.createInput(type="text")
-				.formTittle.pl-5
+							input.createInput(name="acreage", type="text",  value = value ? value.acreage : "")
+				.formTittle
 					.leftInput
-						.lableTittle Giá:
+						.lableTittle Giá: (
+							span(style="color: red") *
+							span )
 						.d(style="display: inline")
-							input.createInput(type="text")
+							input.createInput(name="price", type="text",  value = value ? value.price : "")
 					.rightInput
-						.lableTittle Đơn vị:
+						.lableTittle Đơn vị: (
+							span(style="color: red") *
+							span )
 						.d(style="display: inline")
-							input.createInput(type="text")	
-			.boxInformation(style="display:none;")
-				.formTittle.pl-5
-					.lableTittle Tiêu đề:
-					.d(style="display: inline")
-						input(type="text", id="tittle", style="width: 600px; height: 50px; border-radius: 3px").mr-2
-					span 99 từ
-				.formTittle.pl-5
-					.leftInput
-						.lableTittle Hình thức:
-						.d(style="display: inline")
-							input.createInput(type="text")
-					.rightInput
-						.lableTittle loại:
-						.d(style="display: inline")
-							input.createInput(type="text")
-				.formTittle.pl-5
-					.leftInput
-						.lableTittle Quận:
-						.d(style="display: inline")
-							input.createInput(type="text")
-					.rightInput
-						.lableTittle Xã/ Phường:
-						.d(style="display: inline")
-							input.createInput(type="text")
-				.formTittle.pl-5
-					.leftInput
-						.lableTittle Đường phố:
-						.d(style="display: inline")
-							input.createInput(type="text")
-					.rightInput
-						.lableTittle Diện tích:
-						.d(style="display: inline")
-							input.createInput(type="text")
-				.formTittle.pl-5
-					.leftInput
-						.lableTittle Giá:
-						.d(style="display: inline")
-							input.createInput(type="text")
-					.rightInput
-						.lableTittle Đơn vị:
-						.d(style="display: inline")
-							input.createInput(type="text")
+							input.createInput(name="unit", type="text",  value = value ? value.unit : "")
+				button(style="position: absolute; bottom: 30px; right: 50%;") Submit
 		script.
 			const button = document.getElementsByClassName("styleCreate");
 			const boxInformation = document.getElementsByClassName("boxInformation");

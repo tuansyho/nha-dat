@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
   
-var muaBanSchema = new mongoose.Schema({
+var postBanSchema = new mongoose.Schema({
 	"tittle": String,
 	"district": String,
 	"breed": String,
@@ -10,6 +10,6 @@ var muaBanSchema = new mongoose.Schema({
 	"price": String,
 	"unit": String
 });
-var MuaBan = mongoose.model('MuaBan', muaBanSchema, 'MuaBan');
+var postBan = mongoose.model('postBan', postBanSchema, 'postBan');
 
-module.exports = MuaBan;
+module.exports = postBan;

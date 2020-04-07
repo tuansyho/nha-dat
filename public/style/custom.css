@@ -63,6 +63,15 @@ a{
   .padding-l{
 	padding-left: 0em; 
 }
+  .boxInformation{
+  	width: 300px;
+  }
+  .d{
+  	width: 300px !important;
+  }
+  .width600{
+  	width: 300px !important;
+  }
 }
 .why{
 	background-color: rgba(0, 0, 0, 0.7);
@@ -103,7 +112,6 @@ a.view{
 	background-image: url('/image/sssss.jpg');
 	background-size: cover;
 	background-position: bottom;
-	height: 700px;
 }
 .background-view{
 	background-color: #383b39;
@@ -251,7 +259,7 @@ button:focus{
 	outline: 0;
 }
 .formTittle{
-	width: 800px;
+	width: 100%;
 	margin-bottom: 2em;
 }
 .leftInput{
@@ -269,10 +277,14 @@ button:focus{
 	border-radius: 3px;	
 }
 .lableTittle{
-	width: 100px !important;
+	width: 110px !important;
 	display: inline-block;
 }
 .showCreate{
 	display: inline !important;
+}
+.tittle-span{
+	font-weight: 500;
+	color: #d7b424;
 }
 
