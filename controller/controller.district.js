@@ -1,7 +1,7 @@
-const MuaBan = require('../mongodb/muaBan.js');
+const outBan = require('../mongodb/outBan.js');
 
 module.exports.district1 = async (req, res) => {
-	const MuaBans = await MuaBan.find();
+	const MuaBans = await outBan.find();
 	const muaBans = MuaBans.filter(function(MuaBan){
 			return MuaBan.district === '1'
 		});
@@ -10,7 +10,7 @@ module.exports.district1 = async (req, res) => {
 		});
 };
 module.exports.district2 = async (req, res) => {
-	const MuaBans = await MuaBan.find();
+	const MuaBans = await outBan.find();
 	const muaBans = MuaBans.filter(function(MuaBan){
 			return MuaBan.district === '2'
 		});
@@ -19,7 +19,7 @@ module.exports.district2 = async (req, res) => {
 		});
 };
 module.exports.district3 = async (req, res) => {
-	const MuaBans = await MuaBan.find();
+	const MuaBans = await outBan.find();
 	const muaBans = MuaBans.filter(function(MuaBan){
 			return MuaBan.district === '3'
 		});

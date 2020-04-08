@@ -15,11 +15,11 @@ block content
 	.create-body
 		.container.pt-5
 			.d-flex.justify-content-center
-				button.styleCreate.active Đăng tin bán
-				a(href="/muaBan/createMua")
-					button.styleCreate Đăng tin mua
+				a(href="/muaBan/create")
+					button.styleCreate Đăng tin bán
+				button.styleCreate.active Đăng tin mua
 		.container.pb-5.pt-5.d-flex.justify-content-center(style="background-color: rgba(100,100,100,0.7);border-radius: 3px; position: relative;")
-			form.boxInformation(action="/muaBan/create", method="POST")
+			form.boxInformation(action="/muaBan/createMua", method="POST")
 				if errors
 					.alert.alert-danger(style="text-align: center;")
 						span Bạn chưa điền: |
@@ -27,25 +27,25 @@ block content
 							span= error
 				.formTittle
 					.lableTittle Tiêu đề: (
-						span(style="color: red;") *
-						span )
-					.d(style="display: inline; height: 0px;")
-						input.width600.pl-2(name="tittle", type="text", id="tittle", style="width: 600px; height: 50px; border-radius: 3px;", value = value ? value.tittle : "").mr-2
-						span 99 từ
+							span(style="color: red") *
+							span )
+					.d(style="display: inline")
+						input(name="tittle", type="text", id="tittle", style="width: 600px; height: 50px; border-radius: 3px;",  value = value ? value.tittle1 : "").mr-2
+					span 99 từ
 				.formTittle
 					.leftInput
 						.lableTittle Hình thức: (
 							span(style="color: red") *
 							span )
-						.d(style="display: inline; height: 0px;")
+						.d(style="display: inline")
 							select(name="breed").createInput.pl-2
-								option Bán
-								option Thuê
+								option Mua
+								option Muốn thuê
 					.rightInput
 						.lableTittle loại: (
 							span(style="color: red") *
 							span )
-						.d(style="display: inline; height: 0px;")
+						.d(style="display: inline")
 							select(name="kind").createInput.pl-2
 								option Chung cư
 								option Nhà riêng
@@ -58,7 +58,7 @@ block content
 						.lableTittle Quận: (
 							span(style="color: red") *
 							span )
-						.d(style="display: inline; height: 0px;")
+						.d(style="display: inline")
 							select(name="district").createInput.pl-2
 								option Quận 1
 								option Quận 2
@@ -67,33 +67,32 @@ block content
 						.lableTittle Xã/ Phường: (
 							span(style="color: red") *
 							span )
-						.d(style="display: inline; height: 0px;")
-							input.createInput.pl-2(name="wards", type="text",  value = value ? value.wards : "")
+						.d(style="display: inline")
+							input.createInput(name="wards", type="text",  value = value ? value.wards : "")
 				.formTittle
 					.leftInput
 						.lableTittle Đường phố: (
 							span(style="color: red") *
 							span )
-						.d(style="display: inline; height: 0px;")
-							input.createInput.pl-2(name="streetCity", type="text",  value = value ? value.streetCity : "")
+						.d(style="display: inline")
+							input.createInput(name="streetCity", type="text",  value = value ? value.streetCity : "")
 					.rightInput
 						.lableTittle Diện tích: (
 							span(style="color: red") *
 							span )
-						.d(style="display: inline; height: 0px;")
-							input.createInput.pl-2(name="acreage", type="text",  value = value ? value.acreage : "")
+						.d(style="display: inline")
+							input.createInput(name="acreage", type="text",  value = value ? value.acreage : "")
 				.formTittle
 					.leftInput
 						.lableTittle Giá: (
 							span(style="color: red") *
 							span )
-						.d(style="display: inline; height: 0px;")
-							input.createInput.pl-2(name="price", type="text",  value = value ? value.price : "")
+						.d(style="display: inline")
+							input.createInput(name="price", type="text",  value = value ? value.price : "")
 					.rightInput
 						.lableTittle Đơn vị: (
 							span(style="color: red") *
 							span )
-						.d(style="display: inline; height: 0px;")
-							input.createInput.pl-2(name="unit", type="text",  value = value ? value.unit : "")
-				button.sumit(style="position: absolute; bottom: 30px; right: 46%;") Submit
-			
+						.d(style="display: inline")
+							input.createInput(name="unit", type="text",  value = value ? value.unit : "")
+				button(style="position: absolute; bottom: 30px; right: 46%;") Submit

@@ -252,6 +252,9 @@ select:focus{
 	font-weight: 500; 
 	opacity: 0.5
 }
+.styleCreate:hover{
+	opacity: 1;
+}
 .active{
 	opacity: 1;
 }

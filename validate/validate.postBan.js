@@ -4,18 +4,6 @@ module.exports.createPost = (req, res, next) => {
 	{
 		errors.push('| tiêu đè  |');
 	}
-	if(!req.body.breed)
-	{
-		errors.push('| Hình thức  |');
-	}
-	if(!req.body.kind)
-	{
-		errors.push('| loại |');
-	}
-	if(!req.body.district)
-	{
-		errors.push('| Quận |');
-	}
 	if(!req.body.wards)
 	{
 		errors.push('| Xã/Phường |');

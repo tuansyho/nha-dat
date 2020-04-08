@@ -114,15 +114,15 @@ block content
 			h1.container MUA BÁN ĐẤT :
 		.container.mb-5#muaBan
 			.row
-				each muaBan in muaBans
-					.col-12.col-md-6.col-lg-3.card.mb-4.p-0.card-muaBan(style='width: 18rem;')
-						img.card-img-top.img-muaBan( src= muaBan.avatar)
+				each outBan in outBans
+					.col-12.col-md-6.col-lg-3.card.mb-4.p-0.card-outBan(style='width: 18rem;')
+						img.card-img-top.img-outBan( src= outBan.avatar)
 						.card-body(style='position: relative;')
 							h5.d-inline.card-title Địa chỉ: 
-							h5.d-inline= muaBan.address 
-							p.card-text= muaBan.information
-							span.district= muaBan.district
-						a.view(href='/muaBan/' + muaBan.id) Xem chi tiết
+							h5.d-inline= outBan.address 
+							p.card-text= outBan.information
+							span.district= outBan.district
+						a.view(href='/muaBan/' + outBan.id) Xem chi tiết
 		.container
 			a(href='/muaBan#muaBan')
 				h3.mb-4(style='text-align: end; color: blue') Xem tất cả

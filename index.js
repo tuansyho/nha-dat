@@ -10,7 +10,7 @@ const district = require('./router/router.district');
 const email = require('./router/router.createEmail');
 const login = require('./router/router.login');
 
-const MuaBan = require('./mongodb/muaBan.js');
+const outBan = require('./mongodb/outBan.js');
 
 const port = 3000;
 
@@ -23,9 +23,9 @@ app.set('view engine', 'pug');
 
 
 app.get('/', (req, res)=>{
-	MuaBan.find().then((muaBans) => {
+	outBan.find().then((outBan) => {
 		res.render('index',{
-			muaBans: muaBans.slice(0,8)
+			outBans: outBan.slice(0,8)
 		});
 	})
 })

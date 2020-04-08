@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
   
-var muaBanSchema = new mongoose.Schema({
+var outBanSchema = new mongoose.Schema({
 	"tittle": String,
 	"district": String,
 	"breed": String,
@@ -10,6 +10,6 @@ var muaBanSchema = new mongoose.Schema({
 	"price": String,
 	"unit": String
 });
-var MuaBan = mongoose.model('MuaBan', muaBanSchema, 'MuaBan');
+var outBan = mongoose.model('outBan', outBanSchema, 'outBan');
 
-module.exports = MuaBan;
+module.exports = outBan;
