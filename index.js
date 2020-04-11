@@ -45,7 +45,7 @@ app.use('/choThue', choThue);
 //  	console.log('connection db');
 //  });
 
-mongoose.connect('mongodb://localhost/muaBan', {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost/muaBan', { useNewUrlParser: true, useUnifiedTopology: true});
 	
 app.listen(3000, function(){
 	console.log('Example app listening on port' +' '+ 3000); 
