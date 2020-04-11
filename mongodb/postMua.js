@@ -8,7 +8,8 @@ var postMuaSchema = new mongoose.Schema({
 	"wards": String,
 	"acreage": String,
 	"price": String,
-	"unit": String
+	"unit": String,
+	"streetCity":String
 });
 var postMua = mongoose.model('postMua', postMuaSchema, 'postMua');
 

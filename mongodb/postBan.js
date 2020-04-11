@@ -8,7 +8,8 @@ var postBanSchema = new mongoose.Schema({
 	"wards": String,
 	"acreage": String,
 	"price": String,
-	"unit": String
+	"unit": String,
+	"streetCity":String
 });
 var postBan = mongoose.model('postBan', postBanSchema, 'postBan');
 

@@ -10,6 +10,6 @@ var choThueSchema = new mongoose.Schema({
 	"price": String,
 	"unit": String
 });
-var postBan = mongoose.model('postBan', postBanSchema, 'postBan');
+var choThue = mongoose.model('choThue', choThueSchema, 'choThue');
 
-module.exports = postBan;
+module.exports = choThue;

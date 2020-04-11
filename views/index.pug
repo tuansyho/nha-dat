@@ -8,6 +8,8 @@ block content
 					ul.nav.d-flex.align-items-center.justify-content-center
 						li.nav-item.pr-2
 							a.nav-link(href='/muaBan#muaBan') Mua bán
+						li.nav-item
+							a.nav-link(href='/choThue') Cho thuê
 						li.nav-item.pr-2
 							a.nav-link(href='#') Dự án		
 						li.nav-item
@@ -111,18 +113,51 @@ block content
 				span.carousel-control-next-icon(aria-hidden='true')
 				span.sr-only Next
 		.main-titlle.rounded-pill.pt-3.pb-3.mb-5
-			h1.container MUA BÁN ĐẤT :
-		.container.mb-5#muaBan
-			.row
+			h1.container TIN BÁN ĐẤT :
+		.container.mb-5.showContent.get(style="display: none;")
+			.rows
 				each outBan in outBans
-					.col-12.col-md-6.col-lg-3.card.mb-4.p-0.card-outBan(style='width: 18rem;')
-						img.card-img-top.img-outBan( src= outBan.avatar)
-						.card-body(style='position: relative;')
-							h5.d-inline.card-title Địa chỉ: 
-							h5.d-inline= outBan.address 
-							p.card-text= outBan.information
-							span.district= outBan.district
-						a.view(href='/muaBan/' + outBan.id) Xem chi tiết
+					.col-12.col-md-6.p-2(style="display:inline-block;")
+						a(href="/login")
+							.d-flex.mediaImage(style="height: 250px;", neme="dsadsaaa")
+								.image( style="width: 50%; height: 100%;")
+									img(src="/image/sssss.jpg", style="width: 100%; height: 100%; border-radius: 3px 0px 0px 3px;")
+								.container-fluid.infomationRight( style="width: 50%; height: 100%; padding-top: 5px; position: relative; background-color: #343a40; border-radius: 0px 3px 3px 0px;")
+									div(style="position: absolute; bottom: 0px; width:100%;")
+										.row.pb-1
+											.col
+												span.tittle-span= outBan.district 
+										.row.pb-1
+											.col-12
+												span.tittle-span= outBan.wards
+										.row.pb-1
+											.col-12
+												span.tittle-span= outBan.streetCity
+										.row.pb-1
+											.col-12
+												span.tittle-span= outBan.kind
+										.row.pb-1
+											.col-6
+												span.tittle-span= outBan.acreage
+												span  m2
+											.col-6
+												span.tittle-span= outBan.price
+												span  
+												span.tittle-span= outBan.unit
+		.container.mb-5.get(style="display: none;")
+		script.
+			const styleTittle = document.getElementsByClassName("styleTittle");
+			const get = document.getElementsByClassName("get");
+			for(let i = 0; i < styleTittle.length; i++){
+			styleTittle[i].addEventListener("click", function(){
+			const activeTittle = document.getElementsByClassName("activeTittle");
+			activeTittle[0].className = activeTittle[0].className.replace(" activeTittle", "");
+			this.className += " activeTittle";
+			const showContent = document.getElementsByClassName("showContent");
+			showContent[0].className = showContent[0].className.replace(" showContent", "")
+			get[i].className += " showContent";
+			});
+			}
 		.container
 			a(href='/muaBan#muaBan')
 				h3.mb-4(style='text-align: end; color: blue') Xem tất cả

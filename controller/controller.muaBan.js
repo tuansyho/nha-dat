@@ -1,24 +1,27 @@
 const express = require('express');
 
 const outBan = require('../mongodb/outBan.js');
+const outMua = require('../mongodb/outMua.js');
 const postBan = require('../mongodb/postBan.js');
 const postMua = require('../mongodb/postMua.js');
 
 
 const Email = require('../mongodb/email.js');
 module.exports.index = async (req, res) => {
-	const muaBans = await outBan.find();
+	const outBans = await outBan.find();
 	const page = parseInt(req.query.page) || 1;
 	const perPage = 12;
 	const start = (page - 1) * perPage;
 	const end = page * perPage;
 	let vals = [];
-	for(let i = 1; i <= (muaBans.length - 1) / perPage + 1; i++){
+	for(let i = 1; i <= (outBans.length - 1) / perPage + 1; i++){
 		vals.push(i);
 	}
+	const outMuas = await outMua.find();
 	res.render('mua-ban/index',{
-		muaBans: muaBans.slice(start, end),
-		vals: vals
+		outBans: outBans.slice(start, end),
+		vals: vals,
+		outMuas: outMuas
 	});
 };
 module.exports.search = async (req, res) => {

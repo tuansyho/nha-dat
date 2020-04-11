@@ -9,10 +9,14 @@ const muaBan = require('./router/router.muaBan');
 const district = require('./router/router.district');
 const email = require('./router/router.createEmail');
 const login = require('./router/router.login');
+const choThue = require('./router/router.choThue');
+
+
 
 const outBan = require('./mongodb/outBan.js');
 
-const port = 3000;
+
+// const port = 80;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -33,9 +37,17 @@ app.use('/muaBan', muaBan);
 app.use('/district', district);
 app.use('/createEmail', email);
 app.use('/login', login);
-mongoose.connect('mongodb://localhost/muaBan', {useNewUrlParser: true});
+app.use('/choThue', choThue);
 
-app.listen(port, function(){
-	console.log('Example app listening on port' +' '+ port); 
+
+// mongoose.connect('mongodb+srv://tuansyho:tuansyho@cluster0-6ftlw.gcp.mongodb.net/test?retryWrites=true&w=majority',
+//  { useNewUrlParser: true, useUnifiedTopology: true}, () => {
+//  	console.log('connection db');
+//  });
+
+mongoose.connect('mongodb://localhost/muaBan', {useNewUrlParser: true});
+	
+app.listen(3000, function(){
+	console.log('Example app listening on port' +' '+ 3000); 
 });
 

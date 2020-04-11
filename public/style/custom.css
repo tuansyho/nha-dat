@@ -51,6 +51,9 @@ a{
     width: 25rem;
     height: 21rem;
   }
+  .mediaImage{
+  	height: 167px !important; 	
+  }
   .card-muaBan {
     width: 25rem;
     height: 30rem;
@@ -210,6 +213,24 @@ input:focus{
 .div{
 	width: 20%;
 	display: inline;
+}
+.styleTittle{
+	background-color: #333;
+	padding: 20px;
+	border-radius: 7px;
+	opacity: 0.5;
+	color: #d7b424;
+	width: 215px;
+	border: 0px;
+}
+.styleTittle:hover{
+	opacity: 1;
+}
+.showContent{
+	display: block !important;
+}
+.activeTittle{
+	opacity: 1;
 }
 .delete{
 	display: inline;

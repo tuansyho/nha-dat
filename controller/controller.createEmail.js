@@ -7,5 +7,6 @@ module.exports.index = (req, res) => {
 };
 module.exports.createEmailPost = (req, res) => {
 	Email.insertMany(req.body, () => {
+		res.render('email/login');
 	});
 };

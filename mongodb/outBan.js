@@ -1,6 +1,6 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
   
-var outBanSchema = new mongoose.Schema({
+const outBanSchema = new mongoose.Schema({
 	"tittle": String,
 	"district": String,
 	"breed": String,
@@ -8,8 +8,9 @@ var outBanSchema = new mongoose.Schema({
 	"wards": String,
 	"acreage": String,
 	"price": String,
-	"unit": String
+	"unit": String,
+	"streetCity":String
 });
-var outBan = mongoose.model('outBan', outBanSchema, 'outBan');
+const outBan = mongoose.model('outBan', outBanSchema, 'outBan');
 
 module.exports = outBan;
