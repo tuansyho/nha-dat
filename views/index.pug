@@ -14,12 +14,13 @@ block content
 							a.nav-link(href='#') Dự án		
 						li.nav-item
 							a.nav-link(href='#') Tin tức
-						a(href="/muaBan/create")
 					.header-right.create
-						//span= email.email
-						a.pr-1(href="/createEmail") Đăng ký
-						span /
-						a.pr-1(href="/login") Đăng nhập
+						if user
+							span= user
+						else
+							a.pr-1(href="/createEmail") Đăng ký
+							span /
+							a.pr-1(href="/login") Đăng nhập
 						a(href="/muaBan/create")
 							button.btn.btn-warning(type='button') Đăng BĐS
 		.container#find

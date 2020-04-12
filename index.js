@@ -27,9 +27,11 @@ app.set('view engine', 'pug');
 
 
 app.get('/', (req, res)=>{
+	let user = req.cookies.email;
 	outBan.find().then((outBan) => {
 		res.render('index',{
-			outBans: outBan.slice(0,8)
+			outBans: outBan.slice(0,8),
+			user: user
 		});
 	})
 })

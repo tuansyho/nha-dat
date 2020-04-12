@@ -21,7 +21,7 @@ module.exports.login = async (req, res) => {
 			})
 			return;
 		}
-		res.locals.email = checkEmail;
+		res.cookie('email',checkEmail.email);
 		res.cookie('emailId', checkEmail.id);
 		res.redirect('/muaBan/create');
 };
