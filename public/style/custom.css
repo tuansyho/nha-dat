@@ -146,6 +146,7 @@ background: linear-gradient(180deg, rgba(11,6,102,1) 0%, rgba(11,6,102,0.9304096
 	left: 0;
 	background-color: #621e1e;
 	z-index: 1000;
+	height: 35px;
 }
 
 .active{
