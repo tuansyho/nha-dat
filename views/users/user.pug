@@ -1,0 +1,1908 @@
+extends ../layout
+block content
+	.header
+		.header-titlle
+				.d-md-flex.pt-1.pb-1.relative.align-items-center
+					a.mr-5.padding-l(href='/')
+						img(src='/image/SAND KING.png', style='width: 100px; border-radius: 30px;')
+					ul.nav.d-flex.align-items-center.justify-content-center
+						li.nav-item.pr-2
+							a.nav-link(href='/muaBan#muaBan') Mua bán
+						li.nav-item.pr-2
+							a.nav-link(href='#') Dự án		
+						li.nav-item
+							a.nav-link(href='#') Tin tức
+	.setUpUser-body
+		.container.d-flex
+			.userLeft.mr-3
+				.userLeftHeader.pb-3
+					.personalPage TRANG CÁ NHÂN
+					.personalPageBot.d-flex.flex-column.align-items-center
+						img(src='/image/avatar.jpg', style='width:100px; height:100px; margin-bottom: 20px;')
+						span(style='font-weight: 500; font-size: 20px;') HỒ SỸ TUẤN
+						.boxPersonal.p-2
+							span Tài khoản tin rao: 0
+				.manageInformation
+					.tittlePersonal.pl-3.pb-4 Quản lý thông tin cá nhân
+					ul.listManage.pl-5.pt-3
+						li.mb-1
+							a(href='#')
+								span Thay đổi thông tin cá nhân
+						li.mb-1
+							a(href='#')
+								span Thay đổi mật khẩu
+				.manageAd
+					.tittlePersonal.pl-3.pb-4 Quản lý tin rao
+					ul.li.mb-1stManage.pl-5.pt-3
+						li.mb-1
+							a(href='#')
+								span Quản lý tin rao bán/cho thuê
+						li.mb-1
+							a(href='#')
+								span Đăng tin tin rao bán/cho thuê
+						li.mb-1
+							a(href='#')
+								span Quản lý tin rao cần mua/cần thuê
+						li.mb-1
+							a(href='#')
+								span Đăng tin tin rao cần mua/cần thuê
+			.userRight.mb-5
+				.personalPage.mb-2 THAY ĐỔI THÔNG TIN CÁ NHÂN
+				.BoxPersonalRight.pt-3
+					.tittleRight.pl-2 Thông tin cá nhân
+					.form.mt-5.ml-5
+						.lableTittle
+							span Họ và tên (
+							span(style='color:red') *
+							span )
+						input(type='text', style='width: 400px;')
+					.form.mt-3.ml-5
+						.lableTittle
+							span Ngày sinh
+						input(type='text', style='width: 400px;')
+					.form.mt-3.ml-5
+						.lableTittle
+							span Giới tính
+						.ml-0(style='display:inline;')
+							.gender.mr-5(style='display:inline;')
+								input.mr-2(type='radio',style='height: 15px;' name='gender' id='male', value='male')
+								label(for='male') Nam
+							.gender(style='display:inline;')
+								input.mr-2(type='radio',style='height: 15px;' name='gender' id='female', value='female')
+								label(for='female') Nữ
+					.form.mt-3.ml-5
+						table(style='width: 100%')
+							tr
+								td(style='width: 30%;')
+									span Địa chỉ
+								td()
+									table
+										tr(style='height: 50px;')
+											td.pr-5
+												span Tỉnh/Thành phố (
+												span(style='color:red') *
+												span )
+											td.pr-5
+												span Quận/Huyện (
+												span(style='color:red') *
+												span )
+											td.pr-5
+												span Phường/Xã
+										tr(style='height: 50px;')
+											td.pr-5
+												select.selectProvince(onchange="province(this)")
+													option(value="") --Tỉnh/Thành phố--
+													option(value=Hồ Chí Minh) Hồ Chí Minh
+													option(value=Hà Nội) Hà Nội
+													option(value=Đà Nẵng) Đà Nẵng
+													option(value=Bình Dương) Bình Dương
+													option(value=Đồng Nai) Đồng Nai
+													option(value=Khánh Hòa) Khánh Hòa
+													option(value=Hải Phòng) Hải Phòng
+													option(value=Long An) Long An
+													option(value=Quảng Nam) Quảng Nam
+													option(value=Bà Rịa Vũng Tàu) Bà Rịa Vũng Tàu
+													option(value=Đăk Lăk) Đăk Lăk
+													option(value=Cần Thơ) Cần Thơ
+													option(value=Bình Thuận) Bình Thuận
+													option(value=Lâm Đồng) Lâm Đồng
+													option(value=Thừa Thiên Huế) Thừa Thiên Huế
+													option(value=Kiên Giang) Kiên Giang
+													option(value=Bắc Ninh) Bắc Ninh
+													option(value=Quảng Ninh) Quảng Ninh
+													option(value=Thanh Hóa) Thanh Hóa
+													option(value=Nghệ An) Nghệ An
+													option(value=Hải Dương) Hải Dương
+													option(value="Gia Lai") Gia Lai
+													option(value="Bình Phước") Bình Phước
+													option(value="Hưng Yên") Hưng Yên
+													option(value="Bình Định") Bình Định
+													option(value="Tiền Giang") Tiền Giang
+													option(value="Thái Bình") Thái Bình
+													option(value="Bắc Giang") Bắc Giang
+													option(value="Hòa Bình") Hòa Bình
+													option(value="An Giang") An Giang
+													option(value="Vĩnh Phúc") Vĩnh Phúc
+													option(value="Tây Ninh") Tây Ninh
+													option(value="Thái Nguyên") Thái Nguyên
+													option(value="Lào Cai") Lào Cai
+													option(value="Nam Định") Nam Định
+													option(value="Quảng Ngãi") Quảng Ngãi
+													option(value="Bến Tre") Bến Tre
+													option(value="Đăk Nông") Đăk Nông
+													option(value="Cà Mau") Cà Mau
+													option(value="Vĩnh Long") Vĩnh Long
+													option(value="Ninh Bình") Ninh Bình
+													option(value="Phú Thọ") Phú Thọ
+													option(value="Ninh Thuận") Ninh Thuận
+													option(value="Phú Yên") Phú Yên
+													option(value="Hà Nam") Hà Nam
+													option(value="Hà Tĩnh") Hà Tĩnh
+													option(value="Đồng Tháp") Đồng Tháp
+													option(value="Sóc Trăng") Sóc Trăng
+													option(value="Kon Tum") Kon Tum
+													option(value="Quảng Bình") Quảng Bình
+													option(value="Quảng Trị") Quảng Trị
+													option(value="Trà Vinh") Trà Vinh
+													option(value="Hậu Giang") Hậu Giang
+													option(value="Sơn La") Sơn La
+													option(value="Bạc Liêu") Bạc Liêu
+													option(value="Yên Bái") Yên Bái
+													option(value="Tuyên Quang") Tuyên Quang
+													option(value="Điện Biên") Điện Biên
+													option(value="Lai Châu") Lai Châu
+													option(value="Lạng Sơn") Lạng Sơn
+													option(value="Hà Giang") Hà Giang
+													option(value="Bắc Cạn") Bắc Cạn
+													option(value="Cao Bằng") Cao Bằng
+											td.pr-5
+												select.selectDistrict.selectDistrictNotNone(onchange="district(this)")
+													option(value="0") --Quận/Huyện--
+												select.selectDistrict(onchange="district(this)")
+													<!-- ho chi minh -->
+													option(value="0") --Quận/Huyện--
+													option(value="1") Bình Chánh
+													option(value="2") Tân Bình
+													option(value="3") Bình Thạnh
+													option(value="4") Cần Giờ
+													option(value="5") Củ Chi
+													option(value="6") Gò Vấp
+													option(value="7") Hóc Môn
+													option(value="8") Nhà Bè
+													option(value="9") Phú Nhuận
+													option(value="10") Quận 1
+													option(value="11") Quận 2
+													option(value="12") Quận 3
+													option(value="13") Quận 4
+													option(value="14") Quận 5
+													option(value="15") Quận 6
+													option(value="16") Quận 7
+													option(value="17") Quận 8
+													option(value="18") Quận 9
+													option(value="19") Quận 10
+													option(value="21") Quận 11
+													option(value="22") Quận 12
+													option(value="23") Bình Tân
+													option(value="24") Tân Phú
+													option(value="25") Thủ Đức
+												select.selectDistrict(onchange="district(this)")
+													<!-- ha noi -->
+													option(value="26") --Quận/Huyện--
+													option(value="27") Ba Đình
+													option(value="28") Ba Vì
+													option(value="29") Bắc Từ Liêm
+													option(value="30") Cầu Giấy
+													option(value="31") Chương Mỹ
+													option(value="32") Đan Phượng
+													option(value="33") Đông Anh
+													option(value="34") Đống Đa
+													option(value="35") Gia Lâm
+													option(value="36") Hà Đông
+													option(value="37") Hai Bà Trưng
+													option(value="38") Hoài Đức
+													option(value="39") Hoàn Kiếm
+													option(value="40") Hoàng Mai
+													option(value="41") Long Biên
+													option(value="42") Mê Linh
+													option(value="43") Mỹ Đức
+													option(value="44") Nam Từ Liêm
+													option(value="45") Phú Xuyên
+													option(value="46") Phúc Thọ
+													option(value="47") Quốc Oai
+													option(value="48") Sóc Sơn
+													option(value="49") Sơn Tây
+													option(value="50") Tây Hồ
+													option(value="51") Thạch Thất
+													option(value="52") Thanh Oai
+													option(value="53") Thanh Trì
+													option(value="54") Thanh Xuân
+													option(value="55") Thường Tím
+													option(value="56") Ứng Hòa
+												select.selectDistrict(onchange="district(this)")
+													<!-- Đà Nẵng -->
+													option(value="57") --Quận/Huyện--
+													option(value="58") Cẩm Lệ
+													option(value="59") Hải Châu
+													option(value="61") Hà Vang
+													option(value="62") Hoàng Sa
+													option(value="63") Liên Chiểu
+													option(value="64") Ngũ Hành Sơn
+													option(value="65") Sơn Trà
+													option(value="66") Thanh Khê
+												select.selectDistrict(onchange="district(this)")
+													<!-- Bình Dương -->
+													option(value="67") --Quận/Huyện--
+													option(value="68") Bắc Tân Uyên
+													option(value="69") Bàu Bàng
+													option(value="70") Bến Cát
+													option(value="71") Dầu Tiếng
+													option(value="72") Dĩ An
+													option(value="73") Phú Giáo
+													option(value="74") Tân Uyên
+													option(value="75") Thủ Dầu Một
+													option(value="76") Thuận An
+												select.selectDistrict(onchange="district(this)")
+													<!-- Đồng Nai -->
+													option(value="77") --Quận/Huyện--
+													option(value="78") Biên Hòa
+													option(value="79") Cẩm Mỹ
+													option(value="80") Định Quán
+													option(value="81") Long Khánh
+													option(value="82") Long Thành
+													option(value="83") Nhơn Trạch
+													option(value="84") Tân Phú
+													option(value="85") Thống Nhất
+													option(value="86") Trảng Bom
+													option(value="87") Vĩnh Cửu
+													option(value="88") Xuân Lộc
+												select.selectDistrict(onchange="district(this)")
+													<!-- Khánh Hòa -->
+													option(value="89") --Quận/Huyện--
+													option(value="90") Cam Lâm
+													option(value="91") Cam Ranh
+													option(value="92") Diên Khánh
+													option(value="93") Khánh Sơn
+													option(value="94") Khánh Vĩnh
+													option(value="95") Nha Trang
+													option(value="96") Ninh Hòa
+													option(value="97") Trường Sa
+													option(value="98") Vạn Ninh
+												select.selectDistrict(onchange="district(this)")
+													<!-- Hải Phòng -->
+													option(value="99") --Quận/Huyện--
+													option(value="100") An Dương
+													option(value="101") An Lão
+													option(value="102") Bạch Long Vĩ
+													option(value="103") Cát Hải
+													option(value="104") Đồ Sơn
+													option(value="105") Dương Kinh
+													option(value="106") Hải An
+													option(value="107") Hồng Bàng
+													option(value="108") Kiến An
+													option(value="109") Kiến Thụy
+													option(value="110") Lê Chân
+													option(value="111") Ngô Quyền
+													option(value="112") Thủy Nguyên
+													option(value="113") Tiên Lãng
+													option(value="114") Vĩnh Bảo
+												select.selectDistrict(onchange="district(this)")
+													<!-- Long An -->
+													option(value="115") --Quận/Huyện--
+													option(value="116") Bến Lức
+													option(value="117") Cần Đước
+													option(value="118") Cần Giuộc
+													option(value="119") Châu Thành
+													option(value="120") Đức Hòa
+													option(value="121") Đức Huệ
+													option(value="122") Kiến Tường
+													option(value="123") Mộc Hóa
+													option(value="124") Tân An
+													option(value="125") Tân Hưng
+													option(value="126") Tân Thạnh
+													option(value="127") Tân Trụ
+													option(value="128") Thạnh Hóa
+													option(value="129") Thủ Thừa
+													option(value="130") Vĩnh Hưng
+												select.selectDistrict(onchange="district(this)")
+													<!-- Quảng Nam -->
+													option(value="131") --Quận/Huyện--
+													option(value="132") Bắc Trà My
+													option(value="133") Đại Lộc
+													option(value="134") Điện Bàn
+													option(value="135") Đông Giang
+													option(value="136") Duy Xuyên
+													option(value="137") Hiệp Đức
+													option(value="138") Hội An
+													option(value="139") Nam Giang
+													option(value="140") Nam Trà My
+													option(value="141") Nông Sơn
+													option(value="142") Núi Thành
+													option(value="143") Phú Ninh
+													option(value="144") Phước Sơn
+													option(value="145") Quế Sơn
+													option(value="146") Tam Kỳ
+													option(value="147") Tây Giang
+													option(value="148") Thăng Bình
+													option(value="149") Tiên Phước
+												select.selectDistrict(onchange="district(this)")
+													<!-- Bà Rịa Vũng Tàu -->
+													option(value="150") --Quận/Huyện--
+													option(value="151") Bà Rịa
+													option(value="152") Châu Đức
+													option(value="153") Côn Đảo
+													option(value="154") Đất Đỏ
+													option(value="155") Long Điền
+													option(value="156") Phú Mỹ
+													option(value="157") Vũng Tàu
+													option(value="158") Xuyên Mộc
+												select.selectDistrict(onchange="district(this)")
+													<!-- Đăk Lăk -->
+													option(value="159") --Quận/Huyện--
+													option(value="160") Buôn Đôn
+													option(value="161") Buôn Hồ
+													option(value="162") Buôn Ma Thuột
+													option(value="163") Cư Kuin
+													option(value="164") Cư M'gar
+													option(value="165") Ea H'leo
+													option(value="166") Ea Kar
+													option(value="167") Ea Súp
+													option(value="168") Krông Ana
+													option(value="169") Krông Bông
+													option(value="170") Krông Buk
+													option(value="171") Krông Năng
+													option(value="172") Krông Pắc
+													option(value="173") Lăk
+													option(value="174") M'Đrăk
+												select.selectDistrict(onchange="district(this)")
+													<!-- Cần Thơ -->
+													option(value="175") --Quận/Huyện--
+													option(value="176") Thới Lai
+													option(value="177") Bình Thủy
+													option(value="178") Cái Răng
+													option(value="179") Cờ Đỏ
+													option(value="180") Ninh Kiều
+													option(value="181") Ô Môn
+													option(value="182") Phong Điềm
+													option(value="183") Thốt Nốt
+													option(value="184") Vĩnh Thạnh
+												select.selectDistrict(onchange="district(this)")
+													<!-- Bình Thuận -->
+													option(value="185") --Quận/Huyện--
+													option(value="186") Bắc Bình
+													option(value="187") Đảo Phú Quý
+													option(value="188") Đức Linh
+													option(value="189") Hàm Tân
+													option(value="190") Hàm Thuận Bắc
+													option(value="191") Hàm Thuận Nam
+													option(value="192") La Gi
+													option(value="193") Phan Thiết
+													option(value="194") Tánh Linh
+													option(value="195") Tuy Phong
+												select.selectDistrict(onchange="district(this)")
+													<!-- Lâm Đồng -->
+													option(value="196") --Quận/Huyện--
+													option(value="197") Bảo Lâm
+													option(value="198") Bảo Lộc
+													option(value="199") Cát Tiên
+													option(value="200") Đạ Huoai
+													option(value="201") Đà Lạt
+													option(value="202") Đại Tẻh
+													option(value="203") Đam Rông
+													option(value="204") Di Linh
+													option(value="205") Đơn Dương
+													option(value="206") Đức Trọng
+													option(value="207") Lạc Dương
+													option(value="208") Lâm Hà
+												select.selectDistrict(onchange="district(this)")
+													<!-- Thừa Thiên Huế -->
+													option(value="209") --Quận/Huyện--
+													option(value="300") A Lưới
+													option(value="301") Huế
+													option(value="302") Hương Thủy
+													option(value="303") Hương Trà
+													option(value="304") Nam Đông
+													option(value="305") Phong Điền
+													option(value="306") Phú Lộc
+													option(value="307") Phú Vang
+													option(value="308") Quảng Điền
+												select.selectDistrict(onchange="district(this)")
+													<!-- Kiên Giang -->
+													option(value="309") --Quận/Huyện--
+													option(value="310") An Biên
+													option(value="311") An Minh
+													option(value="312") Châu Thành
+													option(value="313") Giang Thành
+													option(value="314") Giồng Riềng
+													option(value="315") Gò Quao
+													option(value="316") Hà Tiên
+													option(value="317") Hòn Đất
+													option(value="318") Kiên Hải
+													option(value="319") Kiên Lương
+													option(value="320") Phú Quốc
+													option(value="321") Rạch Giá
+													option(value="322") Tân Hiệp
+													option(value="323") U Minh Thượng
+													option(value="324") Vĩnh Thuận
+												select.selectDistrict(onchange="district(this)")
+													<!-- Bắc Ninh -->
+													option(value="325") --Quận/Huyện--
+													option(value="326") Bắc Ninh
+													option(value="327") Gia Bình
+													option(value="328") Lương Tài
+													option(value="329") Quế Võ
+													option(value="330") Thuận Thành
+													option(value="331") Tiên Du
+													option(value="332") Từ Sơn
+													option(value="333") Yên Phong
+												select.selectDistrict(onchange="district(this)")
+													<!-- Quảng Ninh -->
+													option(value="334") --Quận/Huyện--
+													option(value="335") Ba Chế
+													option(value="336") Bình Liêu
+													option(value="337") Cẩm Phả
+													option(value="338") Cô Tô
+													option(value="339") Đầm Hà
+													option(value="340") Đông Triều
+													option(value="341") Hạ Long
+													option(value="342") Hải Hà
+													option(value="343") Hoành Bồ
+													option(value="344") Móng Cái
+													option(value="345") Quảng Yên
+													option(value="346") Tiên Yên
+													option(value="347") Uông Bí
+													option(value="348") Vân Đồn
+												select.selectDistrict(onchange="district(this)")
+													<!-- Thanh Hóa -->
+													option(value="349") --Quận/Huyện--
+													option(value="350") Bá Thước
+													option(value="351") Bỉm Sơn
+													option(value="352") Đông Sơn
+													option(value="353") Hà Trung
+													option(value="354") Hậu Lộc
+													option(value="355") Hoằng Hóa
+													option(value="356") Lang Chánh
+													option(value="357") Mường Cát
+													option(value="358") Nga Sơn
+													option(value="359") Ngọc Lăc
+													option(value="360") Như Thanh
+													option(value="361") Như Xuân
+													option(value="362") Nông Cống
+													option(value="363") Quan Hóa
+													option(value="364") Quan Sơn
+													option(value="365") Quảng Xương
+													option(value="366") Sầm Sơn
+													option(value="367") Thạch Thành
+													option(value="368") Thanh Hóa
+													option(value="369") Thiệu Hóa
+													option(value="370") Thọ Xuân
+													option(value="371") Thường Xuân
+													option(value="372") Tĩnh Gia
+													option(value="373") Triệu Sơn
+													option(value="374") Vĩnh Lộc							
+													option(value="375") Yên Định
+												select.selectDistrict(onchange="district(this)")
+													<!-- Nghệ An -->
+													option(value="376") --Quận/Huyện--
+													option(value="377") Anh Sơn
+													option(value="378") Con Cuông
+													option(value="379") Cửu Lò
+													option(value="380") Diễn Châu
+													option(value="381") Đô Lương
+													option(value="382") Hoàng Mai
+													option(value="383") Hưng Nguyên
+													option(value="384") Kỳ Sơn
+													option(value="385") Nam Đàn
+													option(value="386") Nghi Lộc
+													option(value="387") Nghĩa Đàn
+													option(value="388") Quế Phong
+													option(value="389") Qùy Châu
+													option(value="390") Quỳ Hợp
+													option(value="391") Quỳnh Lưu
+													option(value="392") Tân Kỳ
+													option(value="393") Thái Hòa
+													option(value="394") Thanh Chương
+													option(value="395") Tương Dương
+													option(value="396") Vinh
+													option(value="397") Yên Thành
+												select.selectDistrict(onchange="district(this)")
+													<!-- Hải Dương -->
+													option(value="398") --Quận/Huyện--
+													option(value="399") Bình Giang
+													option(value="400") Cẩm Giàng
+													option(value="401") Chí Linh
+													option(value="402") Gia Lộc
+													option(value="403") Hải Dương
+													option(value="404") Kim Thành
+													option(value="405") Kim Môn
+													option(value="406") Nam Sách
+													option(value="407") Ninh Giang
+													option(value="408") Thanh Hà
+													option(value="409") Thanh Miên
+													option(value="410") Tử Kỳ
+												select.selectDistrict(onchange="district(this)")
+													<!-- Gia Lai -->
+													option(value="511") --Quận/Huyện--
+													option(value="512") Cư Jút
+													option(value="513") Dăk Glong 
+													option(value="514") Dăk Mil
+													option(value="515") Dăk R'Lấp
+													option(value="516") Dăk Song
+													option(value="517") Gia Nghĩa
+													option(value="518") Krông Nô
+													option(value="519") Tuy Đức
+												select.selectDistrict(onchange="district(this)")
+													<!-- Bình Phước -->
+													option(value="423") --Quận/Huyện--
+													option Bình Đăng
+													option Bù Đăng
+													option Bù Đốp
+													option Bù Gia Mập
+													option Chơn Thành
+													option Đồng Phú
+													option Đồng Xoài
+													option Hớn Quảng
+													option Lộc Ninh
+													option Phú Riềng
+													option Phước Long
+												select.selectDistrict(onchange="district(this)")
+													<!-- Hưng Yên -->
+													option(value="423") --Quận/Huyện--
+													option Ân Thi 
+													option Hưng Yên
+													option Khoái Châu
+													option Kim Động
+													option Mỹ Hào
+													option Phù Cừ
+													option Tiên Lữ
+													option Văn Giang
+													option Văn Lâm
+													option Yên Mỹ
+												select.selectDistrict(onchange="district(this)")
+													<!-- Bình Định -->
+													option(value="423") --Quận/Huyện--
+													option An Lão
+													option An Nhơn
+													option Hoài Ân
+													option Hoài Nhơn
+													option Phù Cát
+													option Phù Mỹ
+													option Quy Nhơn
+													option Tây Sơn
+													option Tuy Phước
+													option Vân Canh
+													option Vĩnh Thạnh
+												select.selectDistrict(onchange="district(this)")
+													<!-- Tiền Giang -->
+													option(value="423") --Quận/Huyện--
+													option Cái Bè
+													option Cai Lậy
+													option Châu Thành
+													option Chợ Gạo
+													option Gò Công
+													option Gò Công Đông
+													option Gò Công Tây
+													option Huyện Cai Lậy
+													option Mỹ Tho
+													option Tân Phú Đông
+													option Tân Phước
+												select.selectDistrict(onchange="district(this)")
+													<!-- Thái Bình -->
+													option(value="423") --Quận/Huyện--
+													option Đông Hưng
+													option Hưng Hà
+													option Kiến Xương
+													option Quỳnh Phụ
+													option Thái Bình
+													option Thái Thụy
+													option Tiền Hải
+													option Vũ Thư
+												select.selectDistrict(onchange="district(this)")
+													<!-- Bắc Giang -->
+													option(value="423") --Quận/Huyện--
+													option Bắc Giang
+													option Hòa Hiệp
+													option Lạng Giang
+													option Lục Ngạn
+													option Sơn Đông
+													option Tân Yên
+													option Việt Yên
+													option Yên Dũng
+													option Yên Thế
+												select.selectDistrict(onchange="district(this)")
+													<!-- Hòa Bình -->
+													option(value="423") --Quận/Huyện--
+													option Cao Phong
+													option Đà Bắc
+													option Hòa Bình
+													option Kim Bôi
+													option Kỳ Sơn
+													option Lạc Sơn
+													option Lạc Thủy
+													option Lương Sơn
+													option Mai Châu
+													option Tân Lạc
+													option Yên Thủy
+												select.selectDistrict(onchange="district(this)")
+													<!-- An Giang -->
+													option(value="423") --Quận/Huyện--
+													option(value="424") An Phú
+													option(value="425") Châu Đốc
+													option(value="426") Châu Phú
+													option(value="427") Châu Thành
+													option(value="428") Chợ Mới
+													option(value="429") Long Xuyên
+													option(value="430") Phú Tân
+													option(value="431") Tân Châu
+													option(value="432") Thoại Sơn
+													option(value="433") Tịnh Biên
+													option(value="434") Tri Tôn
+												select.selectDistrict(onchange="district(this)")
+													<!-- Vĩnh Phúc -->
+													option(value="435") --Quận/Huyện--
+													option(value="436") Bình Xuyên
+													option(value="437") Lập Thạch
+													option(value="438") Phúc Yên
+													option(value="439") Sông Lô
+													option(value="440") Tam Đảo
+													option(value="441") Tam Dương
+													option(value="442") Vĩnh Tường
+													option(value="443") Vĩnh Yên
+													option(value="444") Yên Lạc
+												select.selectDistrict(onchange="district(this)")
+													<!-- Tây Ninh -->
+													option(value="445") --Quận/Huyện--
+													option(value="446") Bến Cầu
+													option(value="447") Châu Thành
+													option(value="448") Dương Minh Châu
+													option(value="449") Gò Dầu
+													option(value="450") Hòa Thành
+													option(value="451") Tân Biên
+													option(value="452") Tân Châu
+													option(value="453") Tây Ninh
+													option(value="454") Trảng Bàng
+												select.selectDistrict(onchange="district(this)")
+													<!-- Thái Nguyên -->
+													option(value="455") --Quận/Huyện--
+													option(value="456") Đại Từ
+													option(value="457") Định Hóa
+													option(value="458") Đồng Hỷ
+													option(value="459") Phổ Yên
+													option(value="460") Phú Bình
+													option(value="461") Phú Lương
+													option(value="462") Sông Công
+													option(value="463") Thái Nguyên
+													option(value="464") Võ Nhai
+												select.selectDistrict(onchange="district(this)")
+													<!-- Lào Cai -->
+													option(value="465") --Quận/Huyện--
+													option(value="466") Bắc Hà
+													option(value="467") Bão Thắng
+													option(value="468") Bão Yên
+													option(value="469") Bát Xát
+													option(value="470") Lào Cai
+													option(value="471") Mường Khương
+													option(value="472") Sa Pa
+													option(value="473") Si Ma Cai
+													option(value="474") Văn Bàn
+												select.selectDistrict(onchange="district(this)")
+													<!-- Nam Định -->
+													option(value="475") --Quận/Huyện--
+													option(value="476") Giao Thủy
+													option(value="477") Hải Hậu
+													option(value="478") Mỹ Lộc
+													option(value="479") Nam Định
+													option(value="480") Nam Trực
+													option(value="481") Nghĩa Hưng
+													option(value="482") Trực Ninh
+													option(value="483") Vụ Bản
+													option(value="484") Xuân Trường
+													option(value="485") Ý Yên
+												select.selectDistrict(onchange="district(this)")
+													<!-- Quảng Ngãi -->
+													option(value="486") --Quận/Huyện--
+													option(value="487") Bà Tơ
+													option(value="488") Bình Sơn
+													option(value="489") Đức Phổ
+													option(value="490") Lý Sơn
+													option(value="491") Minh Long
+													option(value="492") Mộ Đức
+													option(value="493") Nghĩa Hành
+													option(value="494") Quảng Ngãi
+													option(value="495") Sơn Hà
+													option(value="496") Sơn Tây
+													option(value="497") Sơn Tịnh
+													option(value="498") Tây Trà
+													option(value="499") Trà Bồng
+													option(value="500") Tư Nghĩa
+												select.selectDistrict(onchange="district(this)")
+													<!-- Bến Tre -->
+													option(value="501") --Quận/Huyện--
+													option(value="502") Ba Tri
+													option(value="503") Bến Tre
+													option(value="504") Bình Đại
+													option(value="505") Châu Thành
+													option(value="506") Chợ Lách
+													option(value="507") Giồng Trôm
+													option(value="508") Mỏ Cày Bắc
+													option(value="509") Mỏ Cày Nam
+													option(value="510") Thạch Phú
+												select.selectDistrict(onchange="district(this)")
+													<!-- Đăk Nông -->
+													option(value="520") --Quận/Huyện--
+													option Cư Jút
+													option Đăk Glong
+													option Đăk Mil
+													option Đăk R'lấp
+													option Đăk Song
+													option Gia Nghĩa
+													option Krông Nô
+													option Tuy Đức
+												select.selectDistrict(onchange="district(this)")
+													<!-- Cà Mau -->
+													option(value="520") --Quận/Huyện--
+													option(value="521") Cà Mau
+													option(value="522") Cái Nước
+													option(value="523") Đầm Dơi
+													option(value="524") Năm Căn
+													option(value="525") Ngọc Hiển
+													option(value="526") Tân Phú
+													option(value="527") Thới Bình
+													option(value="528") Trần Văn Thời
+													option(value="529") U Minh
+												select.selectDistrict(onchange="district(this)")
+													<!-- Vĩnh Long -->
+													option(value="530") --Quận/Huyện--
+													option(value="531") Bình Minh
+													option(value="532") Bình Tân
+													option(value="533") Long Hồ
+													option(value="534") Mang Thít
+													option(value="535") Tam Bình
+													option(value="536") Trà Ôn
+													option(value="537") Vĩnh Long
+													option(value="538") Vũng Liêm
+												select.selectDistrict(onchange="district(this)")
+													<!-- Ninh Bình -->
+													option(value="539") --Quận/Huyện--
+													option(value="540") Gia Viễn
+													option(value="541") Hoa Lư
+													option(value="542") Kim Sơn
+													option(value="543") Nho Quan
+													option(value="544") Ninh Bình
+													option(value="545") Tam Điệp
+													option(value="546") Yên Khánh
+													option(value="547") Yên Mô
+												select.selectDistrict(onchange="district(this)")
+													<!-- Phú Thọ -->
+													option(value="548") --Quận/Huyện--
+													option(value="549") Cẩm Khê
+													option(value="550") Đoan Hùng
+													option(value="551") Hạ Hòa
+													option(value="552") Lâm Thao
+													option(value="553") Phù Ninh
+													option(value="554") Phú Thọ
+													option(value="555") Tam Nông
+													option(value="556") Tân Sơn
+													option(value="557") Thanh Ba
+													option(value="558") Thanh Sơn
+													option(value="559") Thanh Thủy
+													option(value="560") Việt Trì
+													option(value="561") Yên Lập
+												select.selectDistrict(onchange="district(this)")
+													<!-- Ninh Thuận -->
+													option(value="562") --Quận/Huyện--
+													option(value="563") Bác Ái
+													option(value="564") Ninh Hải
+													option(value="565") Ninh Phước
+													option(value="566") Ninh Sơn
+													option(value="567") Phan Rang - Tháp Chàm
+													option(value="568") Thuận Bắc
+													option(value="569") Thuận Nam
+												select.selectDistrict(onchange="district(this)")
+													<!-- Phú Yên -->
+													option(value="570") --Quận/Huyện--
+													option(value="571") Đông Hòa
+													option(value="572") Đồng Xuân
+													option(value="573") Phú Hòa
+													option(value="574") Sơn Hòa
+													option(value="575") Sông Cầu
+													option(value="576") Sông Hinh
+													option(value="577") Tây hòa
+													option(value="578") Tuy An
+													option(value="579") Tuy Hòa
+												select.selectDistrict(onchange="district(this)")
+													<!-- Hà Nam -->
+													option(value="580") --Quận/Huyện--
+													option(value="581") Lục Bình
+													option(value="582") Duy Tiên
+													option(value="583") Kim Bảng
+													option(value="584") Lý Nhân
+													option(value="585") Phủ Lý
+													option(value="586") Thanh Liêm
+												select.selectDistrict(onchange="district(this)")
+													<!-- Hà Tĩnh -->
+													option(value="587") --Quận/Huyện--
+													option(value="588") Cẩm Xuyên
+													option(value="589") Can Lộc
+													option(value="590") Đức Thọ
+													option(value="591") Hà Tĩnh
+													option(value="592") Hồng Lĩnh
+													option(value="593") Hương Khê
+													option(value="594") Hương Sơn
+													option(value="595") Kỳ Anh
+													option(value="596") Lộc Hà
+													option(value="597") Nghi Xuân
+													option(value="598") Thạch Hà
+													option(value="599") Vũ Quang
+												select.selectDistrict(onchange="district(this)")
+													<!-- Đồng Tháp -->
+													option --Quận/Huyện--
+													option Cao Lãnh
+													option Châu Thành
+													option Hồng Ngự
+													option Huyện Cao Lãnh
+													option Lai Vung
+													option Lấp Vò
+													option Sa Đéc
+													option Tam Nông
+													option Tân Hồng
+													option Thanh Bình
+													option Tháp Mười
+												select.selectDistrict(onchange="district(this)")
+													<!-- Sóc Trăng -->
+													option(value="683") --Quận/Huyện--
+													option(value="684") Châu Thành
+													option(value="685") Cù Lao Dung
+													option(value="686") Kế Sách
+													option(value="687") Long Phú
+													option(value="688") Mỹ Tú
+													option(value="689") Mỹ Xuyên
+													option(value="690") Ngã Năm
+													option(value="691") Sóc Trăng
+													option(value="692") Thạch Trị
+													option(value="693") Trần Đề
+													option(value="694") Vĩnh Châu
+												select.selectDistrict(onchange="district(this)")
+													<!-- Kon Tum -->
+													option(value="695") --Quận/Huyện--
+													option(value="696") Đăk Glei
+													option(value="697") Đăk Hà
+													option(value="698") Đăk Tô
+													option(value="699") Ia H'Drai
+													option(value="700") Kon Plông
+													option(value="701") Kon Rẫy
+													option(value="702") Kon Tum
+													option(value="703") Ngọc Hồi
+													option(value="704") Sa Thầy
+													option(value="705") Tu Mơ Rôn
+												select.selectDistrict(onchange="district(this)")
+													<!-- Quảng Bình -->
+													option(value="706") --Quận/Huyện--
+													option(value="707") Ba Đồn
+													option(value="708") Bố Trạch
+													option(value="709") Đồng Hới
+													option(value="710") Lệ Thủy
+													option(value="711") Minh Hóa
+													option(value="712") Quảng Ninh
+													option(value="713") Quảng Trạch
+													option(value="714") Tuyên Hóa
+												select.selectDistrict(onchange="district(this)")
+													<!-- Quảng Trị -->
+													option(value="715") --Quận/Huyện--
+													option(value="716") Cam Lộ
+													option(value="717") Đa Krông
+													option(value="718") Đảo Cồn Cỏ
+													option(value="719") Đông Hà
+													option(value="720") Gio Linh
+													option(value="721") Hải Lăng
+													option(value="722") Hướng Hóa
+													option(value="723") Quảng Trị
+													option(value="724") Thiệu Phong
+													option(value="725") Vĩnh Linh
+												select.selectDistrict(onchange="district(this)")
+													<!-- Trà Vinh -->
+													option(value="726") --Quận/Huyện--
+													option(value="727") Càng Long
+													option(value="728") Cầu Kè
+													option(value="729") Cầu Ngang
+													option(value="730") Châu Thành
+													option(value="731") Duyên Hải
+													option(value="732") Huyện Duyên Hải
+													option(value="733") Tiểu Cần
+													option(value="734") Trà Cú
+													option(value="735") Trà Vinh
+												select.selectDistrict(onchange="district(this)")
+													<!-- Hậu Giang -->
+													option(value="736") --Quận/Huyện--
+													option(value="737") Châu Thành
+													option(value="738") Châu Thành A
+													option(value="739") Long Mỹ
+													option(value="740") Ngã Bảy
+													option(value="741") Phụng Hiệp
+													option(value="742") Thị xã Long Mỹ
+													option(value="743") Vị Thanh
+													option(value="744") Vị Thủy
+												select.selectDistrict(onchange="district(this)")
+													<!-- Sơn La -->
+													option(value="745") --Quận/Huyện--
+													option(value="746") Bắc Yên
+													option(value="747") Mai Sơn
+													option(value="748") Mộc Châu
+													option(value="749") Mường La
+													option(value="750") Phù Yên
+													option(value="751") Quỳnh Nhai
+													option(value="752") Sơn La
+													option(value="753") Sông Mã
+													option(value="754") Sốp Cộp
+													option(value="755") Thuận Châu
+													option(value="756") Vân Hồ
+													option(value="757") Yên Châu
+												select.selectDistrict(onchange="district(this)")
+													<!-- Bạc Liêu -->
+													option(value="758") --Quận/Huyện--
+													option(value="759") Bạc Liêu
+													option(value="760") Đông Hải
+													option(value="761") Giá Hai
+													option(value="762") Hòa Bình
+													option(value="763") Hồng Dân
+													option(value="764") Phước Long
+													option(value="765") Vĩnh Lợi
+												select.selectDistrict(onchange="district(this)")
+													<!-- Yên Bái -->
+													option(value="766") --Quận/Huyện--
+													option(value="767") Lục Yên
+													option(value="768") Mai Cang Chải
+													option(value="769") Nghĩa Lộ
+													option(value="770") Trạm Tấu
+													option(value="771") Trấn Yên
+													option(value="772") Văn Chấn
+													option(value="773") Văn Yên
+													option(value="774") Yên Bái
+													option(value="775") Yên Bình
+												select.selectDistrict(onchange="district(this)")
+													<!-- Tuyên Quang -->
+													option(value="776") --Quận/Huyện--
+													option(value="777") Chiêm Hóa
+													option(value="778") Hàm Yên
+													option(value="779") Lâm Bình
+													option(value="780") Na Hang
+													option(value="781") Sơn Dương
+													option(value="782") Tuyên Quang
+													option(value="783") Yên Sơn
+												select.selectDistrict(onchange="district(this)")
+													<!-- Điện Biên -->
+													option(value="784") --Quận/Huyện--
+													option(value="785") Điện Biên
+													option(value="786") Điện Biên Đông
+													option(value="787") Điện Biên Phủ
+													option(value="788") Mường Ảng
+													option(value="789") Mường Chà
+													option(value="790") Mường Lay
+													option(value="791") Mường Nhé
+													option(value="792") Nậm Pồ
+													option(value="793") Tủa Chùa
+													option(value="794") Tuần Giáo
+												select.selectDistrict(onchange="district(this)")
+													<!-- Lai Châu -->
+													option(value="795") --Quận/Huyện--
+													option(value="796") Lai Châu
+													option(value="797") Mường Tè
+													option(value="798") Nậm Nhùn
+													option(value="799") Phong Thổ
+													option(value="800") Sìn Hồ
+													option(value="801") Tam Đường
+													option(value="802") Tân Uyên
+													option(value="803") Than Uyên
+												select.selectDistrict(onchange="district(this)")
+													<!-- Lạng Sơn -->
+													option(value="804") --Quận/Huyện--
+													option(value="805") Bắc Sơn
+													option(value="806") Bình Gia
+													option(value="807") Cao Lộc
+													option(value="808") Chi Lăng
+													option(value="809") Đình Lập
+													option(value="810") Hữu Lũng
+													option(value="811") Lạng Sơn
+													option(value="812") Lộc Bình
+													option(value="813") Tràng Định
+													option(value="814") Văn Lãng
+													option(value="815") Văn Quan
+												select.selectDistrict(onchange="district(this)")
+													<!-- Hà Giang -->
+													option(value="816") --Quận/Huyện--
+													option(value="817") Bắc Mê
+													option(value="818") Bắc Quang
+													option(value="819") Đồng Văn
+													option(value="820") Hà Giang
+													option(value="821") Hòang Su Phì
+													option(value="822") Mèo Vạc 
+													option(value="823") Quản Bạ
+													option(value="824") Quang Bình
+													option(value="825") Vị Xuyên
+													option(value="826") Xín Mần
+													option(value="827") Yên Minh
+												select.selectDistrict(onchange="district(this)")
+													<!-- Bắc Cạn -->
+													option(value="828") --Quận/Huyện--
+													option(value="829") Ba Bể
+													option(value="830") Bắc Cạn
+													option(value="831") Bạch Thông
+													option(value="832") Chợ Đồn
+													option(value="833") Chợ Mới
+													option(value="834") Na Rì
+													option(value="835") Ngân Sơn
+													option(value="836") Pắc Nặm
+												select.selectDistrict(onchange="district(this)")
+													<!-- Cao Bằng -->
+													option(value="837") --Quận/Huyện--
+													option(value="838") Bảo Lạc
+													option(value="839") Bảo Lâm
+													option(value="840") Cao Bằng
+													option(value="841") Hạ Lang
+													option(value="842") Hà Quảng
+													option(value="843") Hòa An
+													option(value="844") Nguyên Bình
+													option(value="845") Phục Hòa 
+													option(value="846") Quảng Uyên
+													option(value="847") Thạch An
+													option(value="848") Thông Nông
+													option(value="849") Trà Lĩnh 
+													option(value="850") Trùng Khánh
+											td.pr-5
+												select.selectWards.selectWardsNotNone(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													<!-- Bình Chánh -->
+													option --Phường/Xã--
+													option An Phú Tây
+													option Bình Chánh
+													option Bình Hưng
+													option Bình Lợi
+													option Đa Phước
+													option Hưng Long
+													option Lê Minh Xuân
+													option Phạm Văn Hai
+													option Phong Phú
+													option Quy Đức
+													option Tân Kiên
+													option Tân Nhựt
+													option Tân Quý Tây
+													option Tân Túc
+													option Vĩnh Lộc A
+													option Vĩnh Lộc B
+												select.selectWards(style='display: none;')
+													<!-- Bình Tân -->
+													option --Phường/Xã--
+													option An Lạc
+													option An Lạc A
+													option Bình Hưng Hòa
+													option Bình Hưng Hòa A
+													option Bình Hưng Hòa B
+													option Bình Trị Đông
+													option Bình Trị Đông A
+													option Bình Trị Đông B
+													option Tân Tạo
+													option Tân Tạo A
+												select.selectWards(style='display: none;')
+													<!-- Bình Thạnh -->
+													option --Phường/Xã--
+													option 1
+													option 11
+													option 12
+													option 13
+													option 14
+													option 15
+													option 17
+													option 19
+													option 2
+													option 21
+													option 22
+													option 24
+													option 25
+													option 26
+													option 27
+													option 28
+													option 3
+													option 5
+													option 6
+													option 7
+												select.selectWards(style='display: none;')
+													<!-- Cần Giờ -->
+													option --Phường/Xã--
+													option An Thới Đông
+													option Bình Khánh
+													option Cần Thạnh
+													option Long Hòa
+													option Lý Nhơn
+													option Tam Thôn Hiệp
+													option Thạch An
+												select.selectWards(style='display: none;')
+													<!-- Củ Chi -->
+													option --Phường/Xã--
+													option An Nhơn Tây
+													option An Phú
+													option An Phú Trung
+													option Bình Mỹ
+													option Củ Chi
+													option Hòa Phú
+													option Nhuận Đức
+													option Pạm Văn Cội
+													option Phú Hòa Đông
+													option Phú Mỹ Hưng
+													option Phước Hiệp
+													option Phước Thạnh
+													option Phước Vĩnh An
+													option Tân An Hội
+													option Tân Phú Trung
+													option Tân Thạnh Đông
+													option Tân Thạnh Tây
+													option Tân Thông Hội
+													option Thái Mỹ
+													option Trung An
+													option Trung Lập Hạ
+													option Trung Lập Thượng
+												select.selectWards(style='display: none;')
+													<!-- Gò Vấp -->
+													option --Phường/Xã--
+													option 1
+													option 10
+													option 11
+													option 12
+													option 13
+													option 14
+													option 15
+													option 16
+													option 17
+													option 3
+													option 4
+													option 5
+													option 6
+													option 7
+													option 8
+													option 9
+												select.selectWards(style='display: none;')
+													<!-- Hóc Môn -->
+													option --Phường/Xã--
+													option Đông Thạnh
+													option Bà Điểm
+													option Hóc Môn
+													option Nhị Bình
+													option Tân Hiệp
+													option Tân Thới Nhì
+													option Tân Xuân
+													option Thới Tam Môn
+													option Trung Chánh
+													option Xuân Thới Đông
+													option Xuân Thới Sơn
+													option Xuân Thới Thượng
+												select.selectWards(style='display: none;')
+													<!-- Nhà Bè -->
+													option --Phường/Xã--
+													option Hiệp Phước
+													option Long Thới
+													option Nhà Bè
+													option Nhơn Đức
+													option Phú Xuân
+													option Phước Kiển
+													option Phước Lộc
+												select.selectWards(style='display: none;')
+													<!-- Phú Nhuận -->
+													option --Phường/Xã--
+													option 1
+													option 10
+													option 11
+													option 12
+													option 13
+													option 14
+													option 15
+													option 17
+													option 2
+													option 25
+													option 3
+													option 4
+													option 5
+													option 6
+													option 7
+													option 8
+													option 9
+												select.selectWards(style='display: none;')
+													<!-- Quận 1 -->
+													option --Phường/Xã--
+													option Bến Nghé
+													option Bến Thành
+													option Cầu Kho
+													option Cầu Ông lãnh
+													option Cô Giang
+													option Đa Kao
+													option Nguyễn Cư Trinh
+													option Nguyễn Thái Bình
+													option Phạm Ngũ Lão
+													option Tân Định
+												select.selectWards(style='display: none;')
+													<!-- Quận 10 -->
+													option --Phường/Xã--
+													option 1
+													option 10
+													option 11
+													option 12
+													option 13
+													option 14
+													option 15
+													option 2
+													option 3
+													option 4
+													option 5
+													option 6 
+													option 7
+													option 8
+													option 9
+												select.selectWards(style='display: none;')
+													<!-- Quận 11 -->
+													option --Phường/Xã--
+													option 1
+													option 10
+													option 11
+													option 12
+													option 13
+													option 14
+													option 15
+													option 16
+													option 2
+													option 3
+													option 4
+													option 5
+													option 6
+													option 7
+													option 8
+													option 9
+												select.selectWards(style='display: none;')
+													<!-- Quận 12 -->
+													option --Phường/Xã--
+													option An Phú Đông
+													option Đông Hưng Thuận
+													option Hiệp Thành
+													option Tân Chánh Hiệp
+													option Tân Hưng Thuận
+													option Tân Thới Hiệp
+													option Tân Thới Nhất
+													option Thành Lộc
+													option Thạnh Xuân
+													option Thới An
+													option Trung Mỹ Tây
+												select.selectWards(style='display: none;')
+													<!-- Quận 2 -->
+													option --Phường/Xã--
+													option Thạnh Mỹ Lợi
+													option An Khánh
+													option An Lợi Đông
+													option An Phú
+													option Bình An
+													option Bình Khánh
+													option Bình Trưng Đông
+													option Bình Trưng Tây
+													option Cát Lái
+													option Thảo Điền
+													option Thủ Thiêm
+												select.selectWards(style='display: none;')
+													<!-- Quận 3 -->
+													option --Phường/Xã--
+													option 1
+													option 10
+													option 11
+													option 12
+													option 13
+													option 14
+													option 2
+													option 3
+													option 4
+													option 5
+													option 6
+													option 7
+													option 8
+													option 9
+												select.selectWards(style='display: none;')
+													<!-- Quận 4 -->
+													option --Phường/Xã--
+													option 1
+													option 10
+													option 11
+													option 12
+													option 13
+													option 14
+													option 15
+													option 16
+													option 18
+													option 2
+													option 3
+													option 4
+													option 5
+													option 6
+													option 8
+													option 9
+												select.selectWards(style='display: none;')
+													<!-- Quận 5 -->
+													option --Phường/Xã--
+													option 1
+													option 10
+													option 11
+													option 12
+													option 13
+													option 14
+													option 15
+													option 2
+													option 3
+													option 4
+													option 5
+													option 6
+													option 7
+													option 8
+													option 9
+												select.selectWards(style='display: none;')
+													<!-- Quận 6 -->
+													option --Phường/Xã--
+													option 1
+													option 10
+													option 11
+													option 12
+													option 13
+													option 14
+													option 2
+													option 3
+													option 4
+													option 5
+													option 6
+													option 7
+													option 8
+													option 9
+												select.selectWards(style='display: none;')
+													<!-- Quận 7 -->
+													option --Phường/Xã--
+													option Bình Thuận
+													option Phú Mỹ
+													option Phú Thuận
+													option Tân Hưng
+													option Tân Kiểng
+													option Tân Phong
+													option Tân Phú
+													option Tân Quy
+													option Tân Thuận Đông
+													option Tân Thuận Tây
+												select.selectWards(style='display: none;')
+													<!-- Quận 8 -->
+													option --Phường/Xã--
+													option 1
+													option 10
+													option 11
+													option 12
+													option 13
+													option 14
+													option 15
+													option 16
+													option 2
+													option 3
+													option 4
+													option 5
+													option 6
+													option 7
+													option 8
+													option 9
+												select.selectWards(style='display: none;')
+													<!-- Quận 9 -->
+													option --Phường/Xã--
+													option Hiệp Phú
+													option Long Bình
+													option Long Phước
+													option Long Thạnh Mỹ
+													option Long Trường
+													option Phú Hữu
+													option Phước Bình
+													option Phước Long A
+													option Phước Long B
+													option Tân Phú
+													option Tăng Nhơn Phú A
+													option Tăng Nhơn Phú B
+													option Trường Thạnh
+												select.selectWards(style='display: none;')
+													<!-- Tân Bình -->
+													option --Phường/Xã--
+													option 1
+													option 10
+													option 11
+													option 12
+													option 13
+													option 14
+													option 15
+													option 2
+													option 3
+													option 4
+													option 5
+													option 6
+													option 7
+													option 8
+													option 9
+												select.selectWards(style='display: none;')
+													<!-- Tân Phú -->
+													option --Phường/Xã--
+													option Hiệp Tân
+													option Hòa Thạnh
+													option Phú Thạnh
+													option Phú Thọ Hòa
+													option Phú Trung
+													option Sơn Kỳ
+													option Tân Quý
+													option Tân Sơn Nhì
+													option Tân Thành
+													option Tân Thới Hòa
+													option Tân Thạnh
+												select.selectWards(style='display: none;')
+													<!-- Thủ Đức -->
+													option --Phường/Xã--
+													option Bình Chiểu
+													option Bình Thọ
+													option Hiệp Bình Chánh
+													option Hiệp Bình Phước
+													option Linh Chiểu
+													option Linh Đông
+													option Linh Tây
+													option Linh Trung
+													option Linh Xuân
+													option Tam Bình
+													option Tam Phú
+													option Trường Thọ
+												select.selectWards(style='display: none;')
+													<!--  -->
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													<!-- ho chi minh -->
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													<!-- ho chi minh -->
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													<!-- ho chi minh -->
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													<!-- ho chi minh -->
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													<!-- ho chi minh -->
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													<!-- ho chi minh -->
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													<!-- ho chi minh -->
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													<!-- ho chi minh -->
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													<!-- ho chi minh -->
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													<!-- ho chi minh -->
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													<!-- ho chi minh -->
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													<!-- ho chi minh -->
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													<!-- ho chi minh -->
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													<!-- ho chi minh -->
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													<!-- ho chi minh -->
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													<!-- ho chi minh -->
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													<!-- ho chi minh -->
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													<!-- ho chi minh -->
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													<!-- ho chi minh -->
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													<!-- ho chi minh -->
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													<!-- ho chi minh -->
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													<!-- ho chi minh -->
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													<!-- ho chi minh -->
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													<!-- ho chi minh -->
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													<!-- ho chi minh -->
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													<!-- ho chi minh -->
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													<!-- ho chi minh -->
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													<!-- ho chi minh -->
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+												select.selectWards(style='display: none;')
+													option --Phường/Xã--
+										tr(style='height: 50px;')
+											td.pr-5
+												span Đường phố
+											td.pr-5
+												span Địa chỉ
+										table
+											tr
+												td.pr-5
+													select
+														option --Đường phố--
+												td(style='padding-left: 32px;')
+													input#inputValue(type='text', style='width:300px;', value="")
+							.demo
+					script.
+						const selectDistrict = document.getElementsByClassName("selectDistrict");
+						const selectDistrictNotNone = document.getElementsByClassName("selectDistrictNotNone");
+						const inputValue = document.getElementById("inputValue");
+						const selectProvince = document.getElementsByClassName("selectProvince");
+						const selectWards = document.getElementsByClassName("selectWards");
+						const selectWardsNotNone = document.getElementsByClassName("selectWardsNotNone");
+						function province(obj){
+								selectDistrictNotNone[0].classList.remove("selectDistrictNotNone");
+								switch(obj.value){
+									case "0": 
+									selectDistrict[0].className += " selectDistrictNotNone";
+									break;
+									case "Hồ Chí Minh": 
+									selectDistrict[1].className += " selectDistrictNotNone";
+									break;
+									case "Hà Nội": 
+									selectDistrict[2].className += " selectDistrictNotNone";
+									break;
+									case "Đà Nẵng": 
+									selectDistrict[3].className += " selectDistrictNotNone";
+									break;
+									case "Bình Dương": 
+									selectDistrict[4].className += " selectDistrictNotNone";
+									break;
+									case "Đồng Nai": 
+									selectDistrict[5].className += " selectDistrictNotNone";
+									break;
+									case "Khánh Hòa": 
+									selectDistrict[6].className += " selectDistrictNotNone";
+									break;
+									case "Hải Phòng": 
+									selectDistrict[7].className += " selectDistrictNotNone";
+									break;
+									case "Long An": 
+									selectDistrict[8].className += " selectDistrictNotNone";
+									break;
+									case "Quảng Nam": 
+									selectDistrict[9].className += " selectDistrictNotNone";
+									break;
+									case "Bà Rịa Vũng Tàu": 
+									selectDistrict[10].className += " selectDistrictNotNone";
+									break;
+									case "Đăk Lăk": 
+									selectDistrict[11].className += " selectDistrictNotNone";
+									break;
+									case "Cần Thơ": 
+									selectDistrict[12].className += " selectDistrictNotNone";
+									break;
+									case "Bình Thuận": 
+									selectDistrict[13].className += " selectDistrictNotNone";
+									break;
+									case "Lâm Đồng": 
+									selectDistrict[14].className += " selectDistrictNotNone";
+									break;
+									case "Thừa Thiên Huế": 
+									selectDistrict[15].className += " selectDistrictNotNone";
+									break;
+									case "Kiên Giang": 
+									selectDistrict[16].className += " selectDistrictNotNone";
+									break;
+									case "Bắc Ninh": 
+									selectDistrict[17].className += " selectDistrictNotNone";
+									break;
+									case "Quảng Ninh": 
+									selectDistrict[18].className += " selectDistrictNotNone";
+									break;
+									case "Thanh Hóa": 
+									selectDistrict[19].className += " selectDistrictNotNone";
+									break;
+									case "Nghệ An": 
+									selectDistrict[20].className += " selectDistrictNotNone";
+									break;
+									case "Hải Dương": 
+									selectDistrict[21].className += " selectDistrictNotNone";
+									break;
+									case "Gia Lai": 
+									selectDistrict[22].className += " selectDistrictNotNone";
+									break;
+									case "Bình Phước": 
+									selectDistrict[23].className += " selectDistrictNotNone";
+									break;
+									case "Hưng Yên": 
+									selectDistrict[24].className += " selectDistrictNotNone";
+									break;
+									case "Bình Định": 
+									selectDistrict[25].className += " selectDistrictNotNone";
+									break;
+									case "Tiền Giang": 
+									selectDistrict[26].className += " selectDistrictNotNone";
+									break;
+									case "Thái Bình": 
+									selectDistrict[27].className += " selectDistrictNotNone";
+									break;
+									case "Bắc Giang": 
+									selectDistrict[28].className += " selectDistrictNotNone";
+									break;
+									case "Hòa Bình": 
+									selectDistrict[29].className += " selectDistrictNotNone";
+									break;
+									case "An Giang": 
+									selectDistrict[30].className += " selectDistrictNotNone";
+									break;
+									case "Vĩnh Phúc": 
+									selectDistrict[31].className += " selectDistrictNotNone";
+									break;
+									case "Tây Ninh": 
+									selectDistrict[32].className += " selectDistrictNotNone";
+									break;
+									case "Thái Nguyên": 
+									selectDistrict[33].className += " selectDistrictNotNone";
+									break;
+									case "Lào Cai": 
+									selectDistrict[34].className += " selectDistrictNotNone";
+									break;
+									case "Nam Định": 
+									selectDistrict[35].className += " selectDistrictNotNone";
+									break;
+									case "Quảng Ngãi": 
+									selectDistrict[36].className += " selectDistrictNotNone";
+									break;
+									case "Bến Tre": 
+									selectDistrict[37].className += " selectDistrictNotNone";
+									break;
+									case "Đăk Nông": 
+									selectDistrict[38].className += " selectDistrictNotNone";
+									break;
+									case "Cà Mau": 
+									selectDistrict[39].className += " selectDistrictNotNone";
+									break;
+									case "Vĩnh Long":
+									selectDistrict[40].className += " selectDistrictNotNone";
+									break;
+									case "Ninh Bình": 
+									selectDistrict[41].className += " selectDistrictNotNone";
+									break;
+									case "Phú Thọ": 
+									selectDistrict[42].className += " selectDistrictNotNone";
+									break;
+									case "Ninh Thuận":
+									selectDistrict[43].className += " selectDistrictNotNone";
+									break;
+									case "Phú Yên": 
+									selectDistrict[44].className += " selectDistrictNotNone";
+									break;
+									case "Hà Nam": 
+									selectDistrict[45].className += " selectDistrictNotNone";
+									break;
+									case "Hà Tĩnh": 
+									selectDistrict[46].className += " selectDistrictNotNone";
+									break;
+									case "Đồng Tháp": 
+									selectDistrict[47].className += " selectDistrictNotNone";
+									break;
+									case "Sóc Trăng": 
+									selectDistrict[48].className += " selectDistrictNotNone";
+									break;
+									case "Kon Tum": 
+									selectDistrict[49].className += " selectDistrictNotNone";
+									break;
+									case "Quảng Bình": 
+									selectDistrict[50].className += " selectDistrictNotNone";
+									break;
+									case "Quảng Trị": 
+									selectDistrict[51].className += " selectDistrictNotNone";
+									break;
+									case "Trà Vinh": 
+									selectDistrict[52].className += " selectDistrictNotNone";
+									break;
+									case "Hậu Giang": 
+									selectDistrict[53].className += " selectDistrictNotNone";
+									break;
+									case "Sơn La": 
+									selectDistrict[54].className += " selectDistrictNotNone";
+									break;
+									case "Bạc Liêu": 
+									selectDistrict[55].className += " selectDistrictNotNone";
+									break;
+									case "Yên Bái": 
+									selectDistrict[56].className += " selectDistrictNotNone";
+									break;
+									case "Tuyên Quang": 
+									selectDistrict[57].className += " selectDistrictNotNone";
+									break;
+									case "Điện Biên": 
+									selectDistrict[58].className += " selectDistrictNotNone";
+									break;
+									case "Lai Châu": 
+									selectDistrict[59].className += " selectDistrictNotNone";
+									break;
+									case "Lạng Sơn": 
+									selectDistrict[60].className += " selectDistrictNotNone";
+									break;
+									case "Hà Giang": 
+									selectDistrict[61].className += " selectDistrictNotNone";
+									break;
+									case "Bắc Cạn": 
+									selectDistrict[62].className += " selectDistrictNotNone";
+									break;
+									case "Cao Bằng": 
+									selectDistrict[63].className += " selectDistrictNotNone";
+									break;
+								}
+								inputValue.value = obj.value;
+						}
+						function district(obj){
+							selectWardsNotNone[0].classList.remove("selectWardsNotNone");
+							for(let i = 0; i < selectWards.length; i++){
+								if(parseInt(obj.value) == i){
+									selectWards[i].className += " selectWardsNotNone";
+								}
+							}
+						}
+					.tittleRight.pl-2.mt-5 Thông tin liên hệ
+					.form.mt-5.ml-5
+						.lableTittle
+							span Số điện thoại (
+							span(style='color:red') *
+							span )
+						input(type='text', style='width: 400px;')
+					.form.mt-5.ml-5
+						.lableTittle
+							span Email (
+							span(style='color:red') *
+							span )
+						input(type='text', style='width: 400px;')
+					.form.mt-5.ml-5
+						.lableTittle
+							span Mã số thuế/CMND
+						input(type='text', style='width: 400px;')
+					.form.mt-5.ml-5
+						.lableTittle
+							span Skype ID
+						input(type='text', style='width: 400px;')
+					.form.mt-5.ml-5
+						.lableTittle
+							span Zalo
+						input(type='text', style='width: 400px;')
+					.form.mt-5.ml-5
+						.lableTittle
+							span Viber
+						input(type='text', style='width: 400px;')

@@ -15,12 +15,9 @@ block content
 						li.nav-item
 							a.nav-link(href='#') Tin tức
 					.header-right.create
-						if user
-							span= user
-						else
-							a.pr-1(href="/createEmail") Đăng ký
-							span /
-							a.pr-1(href="/login") Đăng nhập
+						a.pr-1(href="/createEmail") Đăng ký
+						span /
+						a.pr-1(href="/login") Đăng nhập
 						a(href="/muaBan/create")
 							button.btn.btn-warning(type='button') Đăng BĐS
 		.container#find
@@ -87,7 +84,7 @@ block content
 				active[0].className = active[0].className.replace(" active", "");
 				this.className += " active";
 				const show = document.getElementsByClassName("show");
-				show[0].className = show[0].className.replace(" show", "")
+				show[0].className = show[0].className.replace(" show", "");	
 				select[i].className += " show";
 				});
 				}

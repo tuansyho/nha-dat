@@ -111,7 +111,7 @@ a.view{
 	text-align: center;
 	height: 40px;
 }
-.create-body{
+.setUp-body{
 	background-image: url('/image/sssss.jpg');
 	background-size: cover;
 	background-position: bottom;
@@ -302,7 +302,7 @@ button:focus{
 	border-radius: 3px;	
 }
 .lableTittle{
-	width: 110px !important;
+	width: 200px !important;
 	display: inline-block;
 }
 .showCreate{
@@ -312,4 +312,62 @@ button:focus{
 	font-weight: 500;
 	color: #d7b424;
 }
-
+.setUpUser-body{
+	background-color: #ddd;
+	padding-top: 100px;
+	font-size: 17px;
+}
+.userLeft{
+	width: 30%;
+	border: 1px solid #777;
+}
+.userRight{
+	float: right;
+	width: 70%;
+}
+.userLeftHeader{
+	width: 100%;
+}
+.personalPage{
+	background-color: #444;
+	text-align: center;
+	height: 40px;
+	font-size: 25px;
+	font-weight: 500;
+	margin-bottom: 50px;
+}
+.tittlePersonal{
+	background-color: #777;
+	height: 40px;
+	font-size: 22px;
+	font-weight: 500;
+}
+.tittleRight{
+	height: 35px;
+	background-color: #999;
+	font-weight: 500;
+	font-size: 20px;
+	border-bottom: 3px solid #444;
+}
+.addressUser{
+	width: 150px;
+	height: 150px;
+	display: inline-block;
+}
+.setUpUser-body input{
+	height: 40px;
+	border-radius: 3px;
+}
+.setUpUser-body select{
+	height: 40px;
+	border-radius: 3px;	
+}
+.selectDistrict{
+	display: none;
+}
+.selectDistrictNotNone{
+	display: inline;
+}
+.selectWardsNotNone{
+	display: inline!important;
+}
